@@ -233,6 +233,8 @@ def process_provider(provider_type):
         try:
             providerdir = Path('.') / 'resources' / provider_type / cfndirname
 
+            getatt = []
+
             if not providerdir.exists():
                 providerdir.mkdir(parents=True, exist_ok=True)
                 check_call(['cfn', 'init'], providerdir.absolute(), "{}\n4\nY\n".format(cfntypename).encode('utf-8'))
@@ -310,6 +312,7 @@ def process_provider(provider_type):
                         computed = True
                         #schema['primaryIdentifier'] = ["/properties/Id"]
                         schema['readOnlyProperties'].append("/properties/Id")
+                        getatt.append("Id")
                     else:
                         if 'optional' in attr:
                             if not attr['optional']:
@@ -325,6 +328,7 @@ def process_provider(provider_type):
                                 computed = True
                                 if not optional:
                                     schema['readOnlyProperties'].append("/properties/" + cfnattrname)
+                                    getatt.append(cfnattrname)
 
                     schema['properties'][cfnattrname] = jsonschema_type(attrtype)
 
@@ -458,7 +462,7 @@ def process_provider(provider_type):
             # update handlers.py
             with open("handlers.py.template", "r") as handlerstemplate:
                 with open(providerdir / "src" / cfndirname.lower().replace("-","_") / "handlers.py", "w") as f:
-                    template = handlerstemplate.read().replace("###CFNTYPENAME###",cfntypename).replace("###TFTYPENAME###",k).replace("###PROVIDERTYPENAME###",provider_type)
+                    template = handlerstemplate.read().replace("###CFNTYPENAME###",cfntypename).replace("###TFTYPENAME###",k).replace("###PROVIDERTYPENAME###",provider_type).replace("###GETATT###",json.dumps(getatt))
                     f.write(template)
 
             print("Generated " + cfntypename)

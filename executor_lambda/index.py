@@ -27,6 +27,10 @@ def check_call(args, cwd):
     return stdout.decode('utf-8')
 
 
+def tf_to_cfn_str(obj):
+    return re.sub(r'(?:^|_)(\w)', lambda x: x.group(1).upper(), obj)
+
+
 def cfn_to_tf_str(obj):
     return re.sub('([A-Z]{1})', r'_\1', obj).lower()[1:]
 
@@ -94,7 +98,8 @@ def handler(event, context):
     statebucketname = os.environ['BUCKET']
 
     status = {
-        'status': 'completed'
+        'status': 'completed',
+        'returnValues': {}
     }
 
     try:
@@ -110,7 +115,7 @@ def handler(event, context):
             print("Executing delete")
             check_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'destroy', '-auto-approve', '-no-color'], "/tmp/")
         else:
-            print("Executing create")
+            print("Executing create/update")
             check_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'apply', '-auto-approve', '-no-color'], "/tmp/")
 
         if event['action'] == "DELETE":
@@ -123,10 +128,25 @@ def handler(event, context):
             print("Storing result")
             with open("/tmp/terraform.tfstate", "rb") as f:
                 s3client.upload_fileobj(f, statebucketname, "state/{}.tfstate".format(trackingid))
+            
+            print("Packing return values")
+            try:
+                tfshow = json.loads(check_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'show', '-json', '-no-color'], "/tmp/"))
+                if 'values' in tfshow['values']['root_module']['resources'][0]:
+                    for tfreturnname, tfreturnvalue in tfshow['values']['root_module']['resources'][0]['values'].items():
+                        status['returnValues'][tf_to_cfn_str(tfreturnname)] = tfreturnvalue
+                if 'instances' in tfshow['values']['root_module']['resources'][0]:
+                    for tfreturnname, tfreturnvalue in tfshow['values']['root_module']['resources'][0]['instances'][0]['attributes'].items():
+                        status['returnValues'][tf_to_cfn_str(tfreturnname)] = tfreturnvalue
+                print(status['returnValues'])
+            except:
+                pass
+
     except Exception as e:
         status = {
             'status': 'failed',
-            'error': str(e)
+            'error': str(e),
+            'returnValues': {}
         }
 
     s3client.put_object(Body=json.dumps(status).encode(), Bucket=statebucketname, Key="status/{}.json".format(operationid))
