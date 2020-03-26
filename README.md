@@ -16,7 +16,7 @@ The below requirements must be installed and be available in PATH:
 * Python 3
 * Git
 * Terraform
-* CloudFormation CLI with Python Provider (currently expects slot 4)
+* CloudFormation CLI with Python Provider
 
 ## Installation
 
