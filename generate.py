@@ -290,25 +290,28 @@ def process_provider(provider_type):
                 "handlers": {
                     "create": {
                         "permissions": [
-                            "s3:PutObject",
-                            "secretsmanager:GetSecretValue"
+                            "s3:GetObject",
+                            "s3:DeleteObject",
+                            "lambda:InvokeFunction"
                         ]
                     },
                     "read": {
-                        "permissions": []
+                        "permissions": [
+                            "s3:GetObject"
+                        ]
                     },
                     "update": {
                         "permissions": [
                             "s3:GetObject",
-                            "s3:PutObject",
-                            "secretsmanager:GetSecretValue"
+                            "s3:DeleteObject",
+                            "lambda:InvokeFunction"
                         ]
                     },
                     "delete": {
                         "permissions": [
                             "s3:GetObject",
                             "s3:DeleteObject",
-                            "secretsmanager:GetSecretValue"
+                            "lambda:InvokeFunction"
                         ]
                     },
                     "list": {
@@ -358,12 +361,17 @@ def process_provider(provider_type):
                                 if not optional:
                                     schema['readOnlyProperties'].append("/properties/" + cfnattrname)
                                     getatt.append(cfnattrname)
+                        if 'sensitive' in attr:
+                            if attr['sensitive']:
+                                if 'writeOnlyProperties' not in schema:
+                                    schema['writeOnlyProperties'] = []
+                                schema['writeOnlyProperties'].append("/properties/" + cfnattrname)
 
                     schema['properties'][cfnattrname] = jsonschema_type(attrtype)
 
                     if k in doc_resources:
                         for docarg in doc_resources[k]['arguments']:
-                            if docarg['name'] == attrname and docarg['property_of'] is None:
+                            if docarg['name'] == attrname and docarg['property_of'] is None and docarg['description']:
                                 schema['properties'][cfnattrname]['description'] = docarg['description']
 
             if 'block_types' in v['block']:
@@ -402,12 +410,17 @@ def process_provider(provider_type):
                                 computed = True
                                 if not optional:
                                     continue # read-only props in subdefs are skipped from model
+                        if 'sensitive' in attr:
+                            if attr['sensitive']:
+                                if 'writeOnlyProperties' not in schema:
+                                    schema['writeOnlyProperties'] = []
+                                schema['writeOnlyProperties'].append("/definitions/" + cfnblockname + "/" + cfnattrname)
 
                         schema['definitions'][cfnblockname]['properties'][cfnattrname] = jsonschema_type(attrtype)
 
                         if k in doc_resources:
                             for docarg in doc_resources[k]['arguments']:
-                                if docarg['name'] == attrname and docarg['property_of'] == blockname:
+                                if docarg['name'] == attrname and docarg['property_of'] == blockname and docarg['description']:
                                     schema['definitions'][cfnblockname]['properties'][cfnattrname]['description'] = docarg['description']
                 
                 if 'block_types' in block['block']:
@@ -481,7 +494,7 @@ def process_provider(provider_type):
                 if 'min_items' in block:
                     schema['properties'][cfnblockname]['minItems'] = block['min_items']
 
-                # TODO: Block descriptions, writeOnlyProperties
+                # TODO: Block descriptions/max/min/etc.
 
             with open(providerdir / (cfndirname.lower() + ".json"), "w") as f:
                 f.write(json.dumps(schema, indent=4))
