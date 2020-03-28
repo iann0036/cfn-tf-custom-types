@@ -25,7 +25,7 @@ test_entrypoint = resource.test_entrypoint
 
 
 def check_progress(operationid, trackingid, progress, session):
-    LOG.warn("Retrieving existing operation status")
+    LOG.warn("Retrieving existing operation status ({})".format(operationid))
 
     s3client = session.client('s3')
     stsclient = session.client('sts')
@@ -40,13 +40,12 @@ def check_progress(operationid, trackingid, progress, session):
         if result['status'] == 'completed':
             progress.status = OperationStatus.SUCCESS
 
-            # return values
+            # retrieve model
             try:
-                if 'returnValues' in result:
-                    for return_value_name, return_value_value in result['returnValues'].items():
-                        if return_value_name in ###GETATT### and getattr(progress.resourceModel, return_value_name) is None:
-                            if type(return_value_value) in [str, bool, int, float]: # TODO: How does GetAtt handle arrays/objects?
-                                setattr(progress.resourceModel, return_value_name, return_value_value)
+                model_state = json.loads(s3client.get_object(Bucket=statebucketname, Key="state/{}.model.json".format(trackingid))['Body'].read())
+                
+                for k,v in model_state.items():
+                    setattr(progress.resourceModel, k, v)
             except Exception as e:
                 LOG.warn(str(e))
 
@@ -105,6 +104,7 @@ def create_handler(
                 'logicalId': request.logicalResourceIdentifier,
                 'providerTypeName': '###PROVIDERTYPENAME###',
                 'terraformTypeName': '###TFTYPENAME###',
+                'returnValues': ###GETATT###,
             }).encode(),
         )
 
@@ -160,6 +160,7 @@ def update_handler(
                 'logicalId': request.logicalResourceIdentifier,
                 'providerTypeName': '###PROVIDERTYPENAME###',
                 'terraformTypeName': '###TFTYPENAME###',
+                'returnValues': ###GETATT###,
             }).encode(),
         )
 
@@ -215,6 +216,7 @@ def delete_handler(
                 'logicalId': request.logicalResourceIdentifier,
                 'providerTypeName': '###PROVIDERTYPENAME###',
                 'terraformTypeName': '###TFTYPENAME###',
+                'returnValues': ###GETATT###,
             }).encode(),
         )
 
@@ -237,9 +239,29 @@ def read_handler(
     callback_context: MutableMapping[str, Any],
 ) -> ProgressEvent:
     model = request.desiredResourceState
-    # TODO: put code here
+
+    s3client = session.client('s3')
+    stsclient = session.client('sts')
+    
+    callerid = stsclient.get_caller_identity()
+    statebucketname = "cfntf-{}-{}".format(os.environ['AWS_REGION'], callerid.get('Account'))
+    
+    # retrieve model
+    try:
+        model_state = json.loads(s3client.get_object(Bucket=statebucketname, Key="state/{}.model.json".format(model.tfcfnid))['Body'].read())
+        
+        for k,v in model_state.items():
+            setattr(model, k, v)
+        
+        return ProgressEvent(
+            status=OperationStatus.SUCCESS,
+            resourceModel=model,
+        )
+    except Exception as e:
+        LOG.warn(str(e))
+
     return ProgressEvent(
-        status=OperationStatus.SUCCESS,
+        status=OperationStatus.FAILED,
         resourceModel=model,
     )
 

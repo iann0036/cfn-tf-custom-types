@@ -214,7 +214,7 @@ def jsonschema_type(attrtype):
                     'MapValue'
                 ]
             }
-        } # TODO: Handle this in the handlers
+        }
     else:
         print("ERROR: Unknown attribute type")
         print(attrtype)
@@ -271,6 +271,7 @@ def process_provider(provider_type):
                 "typeName": cfntypename,
                 "description": "CloudFormation equivalent of {}".format(k),
                 "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+                "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/{}/{}/docs/README.md".format(provider_type, cfndirname),
                 "definitions": {},
                 "properties": {
                     "tfcfnid": {
@@ -449,7 +450,7 @@ def process_provider(provider_type):
                     else:
                         schema['definitions'][cfnblockname]['properties']['IsPropertyDefined'] = {
                             'type': 'boolean'
-                        } # TODO: Handle this in handlers
+                        }
                         print("Retained propertyless block: " + cfnblockname)
 
                 if block['nesting_mode'] == "list":
@@ -480,7 +481,7 @@ def process_provider(provider_type):
                 if 'min_items' in block:
                     schema['properties'][cfnblockname]['minItems'] = block['min_items']
 
-                # TODO: Block descriptions
+                # TODO: Block descriptions, writeOnlyProperties
 
             with open(providerdir / (cfndirname.lower() + ".json"), "w") as f:
                 f.write(json.dumps(schema, indent=4))

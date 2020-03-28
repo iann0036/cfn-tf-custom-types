@@ -98,8 +98,7 @@ def handler(event, context):
     statebucketname = os.environ['BUCKET']
 
     status = {
-        'status': 'completed',
-        'returnValues': {}
+        'status': 'completed'
     }
 
     try:
@@ -119,34 +118,46 @@ def handler(event, context):
             check_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'apply', '-auto-approve', '-no-color'], "/tmp/")
 
         if event['action'] == "DELETE":
-            print("Deleting state S3 object")
+            print("Deleting state S3 objects")
             s3client.delete_object(
                 Bucket=statebucketname,
                 Key="state/{}.tfstate".format(trackingid)
             )
+            s3client.delete_object(
+                Bucket=statebucketname,
+                Key="state/{}.model.json".format(trackingid)
+            )
         else:
-            print("Storing result")
+            print("Storing Terraform state")
             with open("/tmp/terraform.tfstate", "rb") as f:
                 s3client.upload_fileobj(f, statebucketname, "state/{}.tfstate".format(trackingid))
             
             print("Packing return values")
             try:
+                event['model']['tfcfnid'] = trackingid
                 tfshow = json.loads(check_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'show', '-json', '-no-color'], "/tmp/"))
                 if 'values' in tfshow['values']['root_module']['resources'][0]:
-                    for tfreturnname, tfreturnvalue in tfshow['values']['root_module']['resources'][0]['values'].items():
-                        status['returnValues'][tf_to_cfn_str(tfreturnname)] = tfreturnvalue
+                    for tfreturnname, return_value_value in tfshow['values']['root_module']['resources'][0]['values'].items():
+                        return_value_name = tf_to_cfn_str(tfreturnname)
+                        if return_value_name in event['returnValues'] and event['model'][return_value_name] is None:
+                            if type(return_value_value) in [str, bool, int, float]: # TODO: How does GetAtt handle arrays/objects?
+                                event['model'][return_value_name] = return_value_value
                 if 'instances' in tfshow['values']['root_module']['resources'][0]:
-                    for tfreturnname, tfreturnvalue in tfshow['values']['root_module']['resources'][0]['instances'][0]['attributes'].items():
-                        status['returnValues'][tf_to_cfn_str(tfreturnname)] = tfreturnvalue
-                print(status['returnValues'])
+                    for tfreturnname, return_value_value in tfshow['values']['root_module']['resources'][0]['instances'][0]['attributes'].items():
+                        return_value_name = tf_to_cfn_str(tfreturnname)
+                        if return_value_name in event['returnValues'] and event['model'][return_value_name] is None:
+                            if type(return_value_value) in [str, bool, int, float]: # TODO: How does GetAtt handle arrays/objects?
+                                event['model'][return_value_name] = return_value_value
             except:
                 pass
+
+            print("Storing model state")
+            s3client.put_object(Body=json.dumps(event['model']).encode(), Bucket=statebucketname, Key="state/{}.model.json".format(trackingid))
 
     except Exception as e:
         status = {
             'status': 'failed',
-            'error': str(e),
-            'returnValues': {}
+            'error': str(e)
         }
 
     s3client.put_object(Body=json.dumps(status).encode(), Bucket=statebucketname, Key="status/{}.json".format(operationid))
