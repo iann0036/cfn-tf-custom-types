@@ -202,7 +202,7 @@ def process_provider(provider_type):
     provider "{provider}" {{}}
         '''.format(provider=provider_type))
 
-    print("Downloading latest provider version...")
+    print("Downloading latest {} provider version...".format(provider_type))
     exec_call(['terraform', 'init'], tempdir.absolute())
     tfschema = json.loads(exec_call(['terraform', 'providers', 'schema', '-json'], tempdir.absolute()))
 
@@ -213,7 +213,7 @@ def process_provider(provider_type):
 
     doc_resources = generate_docs(tempdir, provider_type, tfschema)
 
-    for k,v in tfschema['provider_schemas'][provider_type]['resource_schemas'].items():
+    for k,v in tfschema['provider_schemas']["registry.terraform.io/hashicorp/{}".format(provider_type)]['resource_schemas'].items():
         endnaming = tf_to_cfn_str(k)
         if k.startswith(provider_type + "_"):
             endnaming = tf_to_cfn_str(k[(len(provider_type)+1):])
@@ -228,7 +228,7 @@ def process_provider(provider_type):
 
             if not providerdir.exists():
                 providerdir.mkdir(parents=True, exist_ok=True)
-                exec_call(['cfn', 'init', '--type-name', cfntypename, '--artifact-type', 'RESOURCE', 'python37'], providerdir.absolute())
+                exec_call(['cfn', 'init', '--type-name', cfntypename, '--artifact-type', 'RESOURCE', 'python37', '--use-docker'], providerdir.absolute())
 
             schema = {
                 "typeName": cfntypename,
@@ -681,7 +681,7 @@ def generate_docs(tempdir, provider_type, tfschema):
                         ret[resource_properties['resource_type']] = resource_properties
             
             # provider index
-            for k,v in tfschema['provider_schemas'][provider_type]['resource_schemas'].items():
+            for k,v in tfschema['provider_schemas']["registry.terraform.io/hashicorp/{}".format(provider_type)]['resource_schemas'].items():
                 split_provider_name = k.split("_")
                 split_provider_name.pop(0)
 

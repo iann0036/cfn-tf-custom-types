@@ -15,6 +15,7 @@ The below requirements must be installed and be available in PATH:
 
 * Python 3
 * Git
+* Docker
 * Terraform
 * CloudFormation CLI with Python Provider
 
