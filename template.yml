@@ -1,8 +1,16 @@
 AWSTemplateFormatVersion: "2010-09-09"
 
-Description: "Resources for Terraform->CloudFormation custom type handler"
+Description: "Resources for the Terraform-to-CloudFormation custom type handler"
 
 Parameters:
+    AllowAWSActions:
+        Description: If true, AWS actions will be permitted to execute through an administrative role (required for Terraform::AWS::* resources)
+        Type: String
+        Default: 'true'
+        AllowedValues:
+          - "true"
+          - "false"
+    
     S3Bucket:
         Description: The name of the bucket that contains the Lambda source (leave blank to use latest)
         Type: String
@@ -12,6 +20,26 @@ Parameters:
         Description: The key of the ZIP package within the bucket (leave blank to use latest)
         Type: String
         Default: ''
+
+Metadata: 
+    AWS::CloudFormation::Interface: 
+        ParameterGroups: 
+          - Label: 
+                default: "General Settings"
+            Parameters: 
+              - AllowAWSActions
+          - Label: 
+                default: "Advanced Configuration"
+            Parameters: 
+              - S3Bucket
+              - S3Key
+        ParameterLabels: 
+            AllowAWSActions: 
+                default: "Allow All AWS Actions"
+            S3Bucket: 
+                default: "Executor Lambda Code S3 Bucket"
+            S3Key: 
+                default: "Executor Lambda Code S3 Key"
 
 Mappings:
     RegionMap:
@@ -50,6 +78,7 @@ Mappings:
 
 Conditions:
     S3Defined: !Not [ !Equals [ '', !Ref S3Bucket ] ]
+    AllowAWS: !Equals [ 'true', !Ref AllowAWSActions ]
 
 Resources:
     StateS3Bucket:
@@ -77,8 +106,30 @@ Resources:
                         Service: lambda.amazonaws.com
                     Action: sts:AssumeRole
             Path: /
-            ManagedPolicyArns:
-              - arn:aws:iam::aws:policy/AdministratorAccess
+            Policies:
+              - PolicyName: CoreFunctionality
+                PolicyDocument:
+                    Version: '2012-10-17'
+                    Statement:
+                      - Effect: Allow
+                        Action: secretsmanager:GetSecretValue
+                        Resource: !Sub "arn:${AWS::Partition}:secretsmanager:${AWS::Region}:${AWS::AccountId}:secret:terraform/*"
+                      - Effect: Allow
+                        Action:
+                          - s3:GetObject
+                          - s3:PutObject
+                          - s3:DeleteObject
+                        Resource: !Sub "${StateS3Bucket.Arn}/*"
+              - !If
+                  - "AllowAWS"
+                  - PolicyName: AWSActions
+                    PolicyDocument:
+                        Version: '2012-10-17'
+                        Statement:
+                          - Effect: Allow
+                            Action: '*'
+                            Resource: '*'
+                  - !Ref "AWS::NoValue"
 
     ExecutorLambdaLogGroup:
         Type: AWS::Logs::LogGroup
