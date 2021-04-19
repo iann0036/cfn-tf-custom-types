@@ -285,6 +285,8 @@ def process_provider(provider_type):
 
             if k in doc_resources and len(doc_resources[k]['description']) > 10:
                 schema['description'] = doc_resources[k]['description']
+                if len(schema['description']) > 1023:
+                    schema['description'] = schema['description'][:1020] + "..."
 
             if 'attributes' in v['block']:
                 for attrname,attr in v['block']['attributes'].items():
