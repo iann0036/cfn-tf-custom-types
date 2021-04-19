@@ -114,6 +114,9 @@ def create_handler(
             'trackingid': trackingid,
             'operationid': operationid,
         }
+    except lambdaclient.exceptions.ResourceNotFoundException as e:
+        progress.message = "The execution infrastructure is not available. Read more at https://github.com/iann0036/cfn-tf-custom-types."
+        progress.status = OperationStatus.FAILED
     except Exception as e:
         progress.message = str(e)
         progress.status = OperationStatus.FAILED
