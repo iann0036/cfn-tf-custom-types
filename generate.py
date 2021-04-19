@@ -193,13 +193,6 @@ def jsonschema_type(attrtype):
         }
 
 
-def checkout(url, provider_name):
-    try:
-        exec_call(['git', 'clone', url, '/tmp/' + provider_name + '/'], '/tmp')
-    except:
-        exec_call(['git', 'pull', url], '/tmp/' + provider_name)
-
-
 def process_provider(provider_type):
     tmpdir = tempfile.TemporaryDirectory()
     tempdir = Path(tmpdir.name)
