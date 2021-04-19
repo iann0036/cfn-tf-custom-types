@@ -6,7 +6,7 @@ import json
 from uuid import uuid4
 
 
-def check_call(args, cwd):
+def exec_call(args, cwd):
     proc = subprocess.Popen(args,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
@@ -109,13 +109,13 @@ def handler(event, context):
         tf = generate_tf(event['model'], event['logicalId'], event['providerTypeName'], event['terraformTypeName'])
 
         print("Initializing provider")
-        check_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'init', '-no-color'], "/tmp/")
+        exec_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'init', '-no-color'], "/tmp/")
         if event['action'] == "DELETE":
             print("Executing delete")
-            check_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'destroy', '-auto-approve', '-no-color'], "/tmp/")
+            exec_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'destroy', '-auto-approve', '-no-color'], "/tmp/")
         else:
             print("Executing create/update")
-            check_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'apply', '-auto-approve', '-no-color'], "/tmp/")
+            exec_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'apply', '-auto-approve', '-no-color'], "/tmp/")
 
         if event['action'] == "DELETE":
             print("Deleting state S3 objects")
@@ -135,7 +135,7 @@ def handler(event, context):
             print("Packing return values")
             try:
                 event['model']['tfcfnid'] = trackingid
-                tfshow = json.loads(check_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'show', '-json', '-no-color'], "/tmp/"))
+                tfshow = json.loads(exec_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'show', '-json', '-no-color'], "/tmp/"))
                 if 'values' in tfshow['values']['root_module']['resources'][0]:
                     for tfreturnname, return_value_value in tfshow['values']['root_module']['resources'][0]['values'].items():
                         return_value_name = tf_to_cfn_str(tfreturnname)

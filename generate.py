@@ -102,34 +102,6 @@ PROVIDERS_MAP = {
     'ucloud': ['UCloud','UCloud'],
     'azuread': ['AzureAD','Azure Active Directory']
 }
-PYTHON37_INDEX = None
-
-
-def get_python37_index():
-    global PYTHON37_INDEX
-
-    if PYTHON37_INDEX:
-        return PYTHON37_INDEX
-
-    tmpdir = tempfile.TemporaryDirectory().name
-    os.mkdir(tmpdir)
-    
-    proc = subprocess.Popen(['cfn', 'init'],
-        stdin=subprocess.PIPE,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        cwd=tmpdir)
-    proc.stdin.write(b"XX::XX::XX\n1\n\n\n")
-    stdout, stderr = proc.communicate()
-    lines = stdout.decode().split('\n')
-    for line in lines:
-        if line.endswith("python37"):
-            PYTHON37_INDEX = line[1]
-
-    if not PYTHON37_INDEX:
-        raise Exception("Python provider not found")
-
-    return PYTHON37_INDEX
 
 
 def tf_to_cfn_str(obj):
@@ -143,14 +115,12 @@ def tf_type_to_cfn_type(tf_name, provider_name):
     return "Terraform::" + cfn_provider_name + "::" + tf_to_cfn_str("_".join(split_provider_name))
 
 
-def check_call(args, cwd, cfntypename):
+def exec_call(args, cwd):
     proc = subprocess.Popen(args,
         stdin=subprocess.PIPE,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
         cwd=cwd)
-    if cfntypename:
-        proc.stdin.write("{}\n{}\nY\n".format(cfntypename, get_python37_index()).encode('utf-8'))
     stdout, stderr = proc.communicate()
     if proc.returncode != 0:
         raise subprocess.CalledProcessError(
@@ -225,9 +195,9 @@ def jsonschema_type(attrtype):
 
 def checkout(url, provider_name):
     try:
-        check_call(['git', 'clone', url, '/tmp/' + provider_name + '/'], '/tmp', None)
+        exec_call(['git', 'clone', url, '/tmp/' + provider_name + '/'], '/tmp')
     except:
-        check_call(['git', 'pull', url], '/tmp/' + provider_name, None)
+        exec_call(['git', 'pull', url], '/tmp/' + provider_name)
 
 
 def process_provider(provider_type):
@@ -240,10 +210,10 @@ def process_provider(provider_type):
         '''.format(provider=provider_type))
 
     print("Downloading latest provider version...")
-    check_call(['terraform', 'init'], tempdir.absolute(), None)
-    tfschema = json.loads(check_call(['terraform', 'providers', 'schema', '-json'], tempdir.absolute(), None))
+    exec_call(['terraform', 'init'], tempdir.absolute())
+    tfschema = json.loads(exec_call(['terraform', 'providers', 'schema', '-json'], tempdir.absolute()))
 
-    check_call(['git', 'clone', 'https://github.com/terraform-providers/terraform-provider-{}.git'.format(provider_type), provider_type], tempdir.absolute(), None)
+    exec_call(['git', 'clone', 'https://github.com/terraform-providers/terraform-provider-{}.git'.format(provider_type), provider_type], tempdir.absolute())
 
     outstandingblocks = {}
     schema = {}
@@ -265,7 +235,7 @@ def process_provider(provider_type):
 
             if not providerdir.exists():
                 providerdir.mkdir(parents=True, exist_ok=True)
-                check_call(['cfn', 'init'], providerdir.absolute(), cfntypename)
+                exec_call(['cfn', 'init', '--type-name', cfntypename, '--artifact-type', 'RESOURCE', 'python37'], providerdir.absolute())
 
             schema = {
                 "typeName": cfntypename,
@@ -499,7 +469,7 @@ def process_provider(provider_type):
             with open(providerdir / (cfndirname.lower() + ".json"), "w") as f:
                 f.write(json.dumps(schema, indent=4))
             
-            check_call(['cfn', 'generate'], providerdir.absolute(), None)
+            exec_call(['cfn', 'generate'], providerdir.absolute())
 
             # update handlers.py
             with open("handlers.py.template", "r") as handlerstemplate:

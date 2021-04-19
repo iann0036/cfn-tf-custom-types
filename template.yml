@@ -49,11 +49,9 @@ Mappings:
             bucketname: ianmckay-sa-east-1
 
 Conditions:
-
     S3Defined: !Not [ !Equals [ '', !Ref S3Bucket ] ]
 
 Resources:
-
     StateS3Bucket:
         Type: AWS::S3::Bucket
         Properties:
