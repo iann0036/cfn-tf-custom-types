@@ -22,11 +22,9 @@ def check_call(args, cwd):
 
 print("Preparing package...")
 resourcedir = Path("resources") / sys.argv[1].split("::")[1].lower() / sys.argv[1].replace("::","-")
-shutil.copyfile("assets/cloudformation-cli-python-lib-0.0.1.tar.gz", (resourcedir / "cloudformation-cli-python-lib-0.0.1.tar.gz").absolute())
 
 print("Submitting...")
 check_call(['cfn', 'submit', '--set-default'], resourcedir.absolute())
 
 print("Cleaning up...")
-os.remove((resourcedir / "cloudformation-cli-python-lib-0.0.1.tar.gz").absolute())
 shutil.rmtree((resourcedir / "build").absolute())
