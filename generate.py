@@ -286,15 +286,6 @@ def process_provider(provider_type):
             if k in doc_resources and len(doc_resources[k]['description']) > 10:
                 schema['description'] = doc_resources[k]['description']
 
-            if provider_type == "aws":
-                schema['handlers'] = {
-                    "create": {"permissions": ["*"]},
-                    "read": {"permissions": ["*"]},
-                    "update": {"permissions": ["*"]},
-                    "delete": {"permissions": ["*"]},
-                    "list": {"permissions": ["*"]}
-                }
-
             if 'attributes' in v['block']:
                 for attrname,attr in v['block']['attributes'].items():
                     cfnattrname = tf_to_cfn_str(attrname)
