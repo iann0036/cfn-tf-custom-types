@@ -308,7 +308,7 @@ def process_provider(provider_type):
     print("Downloading latest {} provider version...".format(provider_type))
     exec_call(['terraform', 'init'], tempdir.absolute())
     tfschemadata = exec_call(['terraform', 'providers', 'schema', '-json'], tempdir.absolute())
-    print(tfschemadata)
+    print("##" + tfschemadata + "$$")
     tfschema = json.loads(tfschemadata)
 
     exec_call(['git', 'clone', provider_data["data"][0]["attributes"]["source"], provider_type], tempdir.absolute())
