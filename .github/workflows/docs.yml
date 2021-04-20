@@ -30,10 +30,10 @@ jobs:
     - name: Generate providers
       run: |
         python util/providerscript.py > util/providers.sh
-        sh util/providers.sh
-        rm util/providers.sh
+        sh util/providers.sh || true
     - name: Commit files
       run: |
+        rm util/providers.sh
         rm .gitignore
         mv .docsgitignore .gitignore
         git config --local user.email "cfntfbot@ian.mn"
