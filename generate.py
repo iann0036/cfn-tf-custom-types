@@ -96,6 +96,7 @@ PROVIDERS_MAP = {
     'skytap': ['Skytap','Skytap'],
     'hedvig': ['Hedvig','Hedvig'],
     'ucloud': ['UCloud','UCloud'],
+    'akamai': ['Akamai','Akamai'],
     'azuread': ['AzureAD','Azure Active Directory'],
     'ad': ['AD','Active Directory'],
     'archive': ['Archive','Archive'],
