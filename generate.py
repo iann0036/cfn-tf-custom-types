@@ -30,7 +30,6 @@ PROVIDERS_MAP = {
     'logentries': ['Logentries','Logentries'],
     'datadog': ['Datadog','Datadog'],
     'pagerduty': ['PagerDuty','PagerDuty'],
-    'oneandone': ['OneAndOne','1&1'],
     'ultradns': ['UltraDNS','UltraDNS'],
     'profitbricks': ['ProfitBricks','ProfitBricks'],
     'postgresql': ['PostgreSQL','PostgreSQL'],
@@ -316,7 +315,7 @@ def process_provider(provider_type):
 
     doc_resources = generate_docs(tempdir, provider_type, tfschema, provider_data)
 
-    for k,v in tfschema['provider_schemas']["registry.terraform.io/{}".format(provider_data["data"][0]["attributes"]["full-name"])]['resource_schemas'].items():
+    for k,v in tfschema['provider_schemas']["registry.terraform.io/{}".format(provider_data["data"][0]["attributes"]["full-name"].lower())]['resource_schemas'].items():
         endnaming = tf_to_cfn_str(k)
         if k.startswith(provider_type + "_"):
             endnaming = tf_to_cfn_str(k[(len(provider_type)+1):])
@@ -782,7 +781,7 @@ def generate_docs(tempdir, provider_type, tfschema, provider_data):
                         ret[resource_properties['resource_type']] = resource_properties
             
             # provider index
-            for k,v in tfschema['provider_schemas']["registry.terraform.io/{}".format(provider_data["data"][0]["attributes"]["full-name"])]['resource_schemas'].items():
+            for k,v in tfschema['provider_schemas']["registry.terraform.io/{}".format(provider_data["data"][0]["attributes"]["full-name"].lower())]['resource_schemas'].items():
                 split_provider_name = k.split("_")
                 split_provider_name.pop(0)
 
