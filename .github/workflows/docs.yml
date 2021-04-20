@@ -31,8 +31,11 @@ jobs:
         rm util/providers.sh
     - name: Commit files
       run: |
+        rm .gitignore
+        mv .docsgitignore .gitignore
         git config --local user.email "cfntfbot@ian.mn"
         git config --local user.name "iann0036[bot]"
+        git add -A
         git commit -m "Documentation Update" -a
     - name: Push changes
       uses: ad-m/github-push-action@master
