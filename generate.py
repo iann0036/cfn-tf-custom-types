@@ -194,12 +194,6 @@ PROVIDERS_MAP = {
 }
 
 
-def tfpath():
-    if os.environ["TERRAFORM_CLI_PATH"]:
-        return os.environ["TERRAFORM_CLI_PATH"] + "/terraform"
-    return 'terraform'
-
-
 def tf_to_cfn_str(obj):
     return re.sub(r'(?:^|_)(\w)', lambda x: x.group(1).upper(), obj)
 
@@ -311,8 +305,10 @@ def process_provider(provider_type):
         '''.format(provider=provider_type, source=provider_data["data"][0]["attributes"]["full-name"]))
 
     print("Downloading latest {} provider version...".format(provider_type))
-    exec_call([tfpath(), 'init'], tempdir.absolute())
-    tfschema = json.loads(exec_call([tfpath(), 'providers', 'schema', '-json'], tempdir.absolute()))
+    exec_call(['terraform', 'init'], tempdir.absolute())
+    tfschemadata = exec_call(['terraform', 'providers', 'schema', '-json'], tempdir.absolute())
+    print(tfschemadata)
+    tfschema = json.loads(tfschemadata)
 
     exec_call(['git', 'clone', provider_data["data"][0]["attributes"]["source"], provider_type], tempdir.absolute())
 
