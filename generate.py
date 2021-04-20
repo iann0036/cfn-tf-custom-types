@@ -22,7 +22,6 @@ PROVIDERS_MAP = {
     'consul': ['Consul','Consul'],
     'cloudstack': ['CloudStack','CloudStack'],
     'tls': ['TLS','TLS'],
-    'cobbler': ['Cobbler','Cobbler'],
     'azurerm': ['AzureRM','Azure'],
     'nomad': ['Nomad','Nomad'],
     'ovh': ['OVH','OVH'],
@@ -32,7 +31,6 @@ PROVIDERS_MAP = {
     'datadog': ['Datadog','Datadog'],
     'pagerduty': ['PagerDuty','PagerDuty'],
     'oneandone': ['OneAndOne','1&1'],
-    'chef': ['Chef','Chef'],
     'ultradns': ['UltraDNS','UltraDNS'],
     'profitbricks': ['ProfitBricks','ProfitBricks'],
     'postgresql': ['PostgreSQL','PostgreSQL'],
@@ -44,7 +42,6 @@ PROVIDERS_MAP = {
     'mailgun': ['Mailgun','Mailgun'],
     'influxdb': ['InfluxDB','InfluxDB'],
     'alicloud': ['Alicloud','Alicloud'],
-    'rundeck': ['Rundeck','Rundeck'],
     'grafana': ['Grafana','Grafana'],
     'rabbitmq': ['RabbitMQ','RabbitMQ'],
     'arukas': ['Arukas','Arukas'],
@@ -64,7 +61,6 @@ PROVIDERS_MAP = {
     'softlayer': ['SoftLayer','SoftLayer'],
     'spotinst': ['Spotinst','Spotinst'],
     'cloudflare': ['Cloudflare','Cloudflare'],
-    'mysql': ['MySQL','MySQL'],
     'kubernetes': ['Kubernetes','Kubernetes'],
     'opc': ['OPC','Oracle Public Cloud'],
     'vault': ['Vault','Vault'],
@@ -100,7 +96,101 @@ PROVIDERS_MAP = {
     'skytap': ['Skytap','Skytap'],
     'hedvig': ['Hedvig','Hedvig'],
     'ucloud': ['UCloud','UCloud'],
-    'azuread': ['AzureAD','Azure Active Directory']
+    'azuread': ['AzureAD','Azure Active Directory'],
+    'ad': ['AD','Active Directory'],
+    'archive': ['Archive','Archive'],
+    'boundary': ['Boundary','Boundary'],
+    'ciscoasa': ['CiscoASA','Cisco ASA'],
+    'cloudinit': ['Cloudinit','Cloudinit'],
+    'external': ['External','External'],
+    'google-beta': ['GoogleBeta','Google Beta'],
+    'hcp': ['HCP','HashiCorp Cloud Platform'],
+    'hcs': ['HCS','HashiCorp Consul Service'],
+    'helm': ['Helm','Helm'],
+    'http': ['HTTP','HTTP'],
+    'kubernetes-alpha': ['KubernetesAlpha','Kubernetes (Alpha)'],
+    'null': ['Null','Null'],
+    'terraform': ['Terraform','Terraform'],
+    'time': ['Time','Time'],
+    'aci': ['ACI','Cisco ACI'],
+    'ah': ['AH','AdvancedHosting Cloud'],
+    'aiven': ['Aiven','Aiven'],
+    'alkira': ['Alkira','Alkira'],
+    'amixr': ['Amixr','Amixr'],
+    'anxcloud': ['Anxcloud','Anexia Cloud'],
+    'artifactory': ['Artifactory','Artifactory'],
+    'avi': ['AVI','AVI Networks'],
+    'aviatrix': ['Aviatrix','Aviatrix'],
+    'azurecaf': ['AzureCAF','Azure Cloud Adoption Framework'],
+    'azuredevops': ['AzureDevOps','Azure DevOps'],
+    'b2': ['B2','B2'],
+    'buildkite': ['Buildkite','Buildkite'],
+    'checkly': ['Checkly','Checkly'],
+    'checkpoint': ['CheckPoint','Check Point'],
+    'civo': ['Civo','Civo'],
+    'cloudeos': ['CloudEOS','Arista CloudEOS'],
+    'cloudsigma': ['CloudSigma','CloudSigma'],
+    'cloudsmith': ['Cloudsmith','Cloudsmith'],
+    'cloudtamerio': ['Cloudtamerio','cloudtamer.io'],
+    'configcat': ['ConfigCat','ConfigCat'],
+    'constellix': ['Constellix','Constellix'],
+    'databricks': ['Databricks','Databricks'],
+    'dcnm': ['DCNM','Cisco DCNM'],
+    'dome9': ['Dome9','Dome9'],
+    'dynatrace': ['Dynatrace','Dynatrace'],
+    'ecl': ['ECL','NTT Enterprise Cloud 2.0'],
+    'equinix': ['Equinix','Equinix'],
+    'exoscale': ['Exoscale','Exoscale'],
+    'fortios': ['FortiOS','FortiOS'],
+    'gridscale': ['Gridscale','Gridscale'],
+    'ilert': ['ILert','iLert'],
+    'intersight': ['Intersight','Cisco Intersight'],
+    'ionoscloud': ['IONOSCloud','IONOS Cloud'],
+    'lacework': ['Lacework','Lacework'],
+    'launchdarkly': ['LaunchDarkly','LaunchDarkly'],
+    'limelight': ['Limelight','Limelight'],
+    'logzio': ['Logzio','Logz.io'],
+    'metal': ['Metal','Equinix Metal'],
+    'mongodbatlas': ['MongoDBAtlas','MongoDB Atlas'],
+    'mso': ['MSO','Cisco MSO'],
+    'netapp-cloudmanager': ['NetAppCloudManager','NetApp Cloud Volumes ONTAP'],
+    'netapp-elementsw': ['NetAppElementSW','NetApp ElementSW'],
+    'netapp-gcp': ['NetAppGCP','NetApp Cloud Volumes Service for Google Cloud'],
+    'nutanixkps': ['NutanixKPS','Nutanix KPS'],
+    'octopusdeploy': ['OctopusDeploy','Octopus Deploy'],
+    'okta': ['Okta','Okta'],
+    'oktaasa': ['OktaASA','Okta ASA'],
+    'onelogin': ['OneLogin','OneLogin'],
+    'onepassword': ['OnePassword','1Password'],
+    'oneview': ['OneView','HPE OneView'],
+    'opennebula': ['OpenNebula','OpenNebula'],
+    'pnap': ['PNAP','phoenixNAP'],
+    'prismacloud': ['PrismaCloud','Palo Alto Networks Prisma Cloud'],
+    'quorum': ['Quorum','Quorum'],
+    'rancher2': ['Rancher2','Rancher v2'],
+    'rediscloud': ['RedisCloud','Redis Enterprise Cloud'],
+    'rke': ['RKE','Rancher Kubernetes Engine'],
+    'rollbar': ['Rollbar','Rollbar'],
+    'sdm': ['SDM','strongDM'],
+    'sematext': ['Sematext','Sematext'],
+    'signalfx': ['SignalFx','SignalFx'],
+    'sigsci': ['SigSci','Signal Sciences'],
+    'splunk': ['Splunk','Splunk'],
+    'stackpath': ['StackPath','StackPath'],
+    'sumologic': ['SumoLogic','Sumo Logic'],
+    'thunder': ['Thunder','A10 Thunder'],
+    'transloadit': ['Transloadit','Transloadit'],
+    'turbot': ['Turbot','Turbot'],
+    'upcloud': ['UpCloud','UpCloud'],
+    'venafi': ['Venafi','Venafi'],
+    'victorops': ['VictorOps','VictorOps'],
+    'vmc': ['VMC','VMware Cloud'],
+    'volterra': ['Volterra','Volterra'],
+    'vra': ['VRA','VMware vRealize Automation'],
+    'vra7': ['VRA7','VMware vRealize Automation 7'],
+    'vultr': ['Vultr','Vultr'],
+    'wavefront': ['Wavefront','Wavefront'],
+    'zerotier': ['ZeroTier','ZeroTier']
 }
 
 
@@ -197,23 +287,35 @@ def process_provider(provider_type):
     tmpdir = tempfile.TemporaryDirectory()
     tempdir = Path(tmpdir.name)
 
+    provider_data = requests.get("https://registry.terraform.io/v2/providers?filter%5Bname%5D={}&filter%5Bmoved%5D=true&filter%5Btier%5D=official%2Cpartner".format(provider_type)).json()
+    if len(provider_data["data"]) != 1:
+        raise Exception("Provider data not found for {}".format(provider_type))
+
     with open(tempdir / "base.tf", "w") as f:
         f.write('''
+    terraform {{
+        required_providers {{
+            {provider} = {{
+                source = "{source}"
+            }}
+        }}
+    }}
+
     provider "{provider}" {{}}
-        '''.format(provider=provider_type))
+        '''.format(provider=provider_type, source=provider_data["data"][0]["attributes"]["full-name"]))
 
     print("Downloading latest {} provider version...".format(provider_type))
     exec_call(['terraform', 'init'], tempdir.absolute())
     tfschema = json.loads(exec_call(['terraform', 'providers', 'schema', '-json'], tempdir.absolute()))
 
-    exec_call(['git', 'clone', 'https://github.com/terraform-providers/terraform-provider-{}.git'.format(provider_type), provider_type], tempdir.absolute())
+    exec_call(['git', 'clone', provider_data["data"][0]["attributes"]["source"], provider_type], tempdir.absolute())
 
     outstandingblocks = {}
     schema = {}
 
     doc_resources = generate_docs(tempdir, provider_type, tfschema)
 
-    for k,v in tfschema['provider_schemas']["registry.terraform.io/hashicorp/{}".format(provider_type)]['resource_schemas'].items():
+    for k,v in tfschema['provider_schemas']["registry.terraform.io/{}".format(provider_data["data"][0]["attributes"]["full-name"])]['resource_schemas'].items():
         endnaming = tf_to_cfn_str(k)
         if k.startswith(provider_type + "_"):
             endnaming = tf_to_cfn_str(k[(len(provider_type)+1):])
@@ -460,7 +562,7 @@ def process_provider(provider_type):
             # update handlers.py
             with open("handlers.py.template", "r") as handlerstemplate:
                 with open(providerdir / "src" / cfndirname.lower().replace("-","_") / "handlers.py", "w") as f:
-                    template = handlerstemplate.read().replace("###CFNTYPENAME###",cfntypename).replace("###TFTYPENAME###",k).replace("###PROVIDERTYPENAME###",provider_type).replace("###GETATT###",json.dumps(getatt))
+                    template = handlerstemplate.read().replace("###CFNTYPENAME###",cfntypename).replace("###TFTYPENAME###",k).replace("###PROVIDERFULLNAME###",provider_data["data"][0]["attributes"]["full-name"]).replace("###PROVIDERTYPENAME###",provider_type).replace("###GETATT###",json.dumps(getatt))
                     f.write(template)
 
             print("Generated " + cfntypename)
