@@ -185,7 +185,6 @@ PROVIDERS_MAP = {
     'wavefront': ['Wavefront','Wavefront'],
     'zerotier': ['ZeroTier','ZeroTier']
 }
-PROVIDERS_MAP = {'random': ['Random','Random']} # tmp
 PROVIDERS_MAP = collections.OrderedDict(sorted(PROVIDERS_MAP.items(), key=lambda item: item[1][1].lower()))
 
 for provider in PROVIDERS_MAP.keys():
