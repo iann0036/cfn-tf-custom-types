@@ -23,7 +23,6 @@ PROVIDERS_MAP = {
     'logentries': ['Logentries','Logentries'],
     'datadog': ['Datadog','Datadog'],
     'pagerduty': ['PagerDuty','PagerDuty'],
-    'oneandone': ['OneAndOne','1&1'],
     'ultradns': ['UltraDNS','UltraDNS'],
     'profitbricks': ['ProfitBricks','ProfitBricks'],
     'postgresql': ['PostgreSQL','PostgreSQL'],
@@ -186,20 +185,8 @@ PROVIDERS_MAP = {
     'wavefront': ['Wavefront','Wavefront'],
     'zerotier': ['ZeroTier','ZeroTier']
 }
+PROVIDERS_MAP = {'random': ['Random','Random']} # tmp
 PROVIDERS_MAP = collections.OrderedDict(sorted(PROVIDERS_MAP.items(), key=lambda item: item[1][1].lower()))
 
-page = {
-    "links": {
-        "next": "/v2/providers?filter%5Btier%5D=official%2Cpartner&page%5Bnumber%5D=1&page%5Bsize%5D=50"
-    }
-}
-
-while page["links"]["next"]:
-    page = requests.get("https://registry.terraform.io" + page["links"]["next"]).json()
-    for provider in page["data"]:
-        if not provider["attributes"]["name"] in PROVIDERS_MAP:
-            print("    '{providername}': ['{providernameucfirst}','{providernameucfirst}'],".format(providername=provider["attributes"]["name"], providernameucfirst=provider["attributes"]["name"][0].upper() + provider["attributes"]["name"][1:]))
-
-print("---")
 for provider in PROVIDERS_MAP.keys():
-    print("* [{providername}](https://github.com/iann0036/cfn-tf-custom-types/blob/docs/docs/{provider}.md)".format(provider=provider, providername=PROVIDERS_MAP[provider][1]))
+    print("python3 generate.py {}".format(provider))
