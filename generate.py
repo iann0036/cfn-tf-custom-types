@@ -801,6 +801,39 @@ def generate_docs(tempdir, provider_type, tfschema, provider_data):
             provider_readme_items.sort()
             provider_readme.write("\n".join(provider_readme_items))
 
+    else:
+        with open(Path("docs") / "{}.md".format(provider_type), 'w') as provider_readme:
+            readable_provider_name = PROVIDERS_MAP[provider_type][1]
+
+            provider_readme.write("# {} Provider\n\n".format(readable_provider_name))
+            provider_readme.write("## Configuration\n\n")
+            provider_readme.write("Configuration items could not be determined for this provider.\n\n")
+
+            provider_readme.write("## Supported Resources\n\n")
+            provider_readme_items = []
+            
+            # provider index
+            for k,v in tfschema['provider_schemas']["registry.terraform.io/{}".format(provider_data["data"][0]["attributes"]["full-name"].lower())]['resource_schemas'].items():
+                split_provider_name = k.split("_")
+                split_provider_name.pop(0)
+
+                endnaming = tf_to_cfn_str(k)
+                if k.startswith(provider_type + "_"):
+                    endnaming = tf_to_cfn_str(k[(len(provider_type)+1):])
+                
+                cfn_type = "Terraform::" + PROVIDERS_MAP[provider_type][0] + "::" + endnaming
+                
+                provider_readme_items.append("* [{cfn_type}](../resources/{provider_name}/{type_stub}/docs/README.md)".format(
+                    cfn_type=cfn_type,
+                    provider_name=provider_type,
+                    type_stub=tf_type_to_cfn_type(provider_type + "_" + "_".join(split_provider_name), provider_type).replace("::","-")
+                ))
+
+            provider_readme_items = list(set(provider_readme_items))
+            provider_readme_items.sort()
+            provider_readme.write("\n".join(provider_readme_items))
+
+
     return ret
 
 
