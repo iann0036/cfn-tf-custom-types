@@ -213,6 +213,7 @@ def exec_call(args, cwd):
         cwd=cwd)
     stdout, stderr = proc.communicate()
     if proc.returncode != 0:
+        print("Error in call:")
         raise subprocess.CalledProcessError(
             returncode=proc.returncode,
             cmd=args)
