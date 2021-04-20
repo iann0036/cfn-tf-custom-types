@@ -314,7 +314,7 @@ def process_provider(provider_type):
     outstandingblocks = {}
     schema = {}
 
-    doc_resources = generate_docs(tempdir, provider_type, tfschema)
+    doc_resources = generate_docs(tempdir, provider_type, tfschema, provider_data)
 
     for k,v in tfschema['provider_schemas']["registry.terraform.io/{}".format(provider_data["data"][0]["attributes"]["full-name"])]['resource_schemas'].items():
         endnaming = tf_to_cfn_str(k)
@@ -575,7 +575,7 @@ def process_provider(provider_type):
 
 
 # Docs
-def process_resource_docs(provider_name, file_contents, provider_readme_items):
+def process_resource_docs(provider_name, file_contents, provider_readme_items, provider_data):
     section = ""
 
     resource_type = ""
@@ -679,12 +679,17 @@ def process_resource_docs(provider_name, file_contents, provider_readme_items):
     return None
 
 
-def generate_docs(tempdir, provider_type, tfschema):
+def generate_docs(tempdir, provider_type, tfschema, provider_data):
     resources_path = (tempdir / provider_type / "website" / "docs" / "r").absolute()
     index_path = (tempdir / provider_type / "website" / "docs" / "index.html.markdown").absolute()
     provider_reference_path = (tempdir / provider_type / "website" / "docs" / "provider_reference.html.markdown").absolute()
     provider_readme_items = []
     ret = {}
+
+    if not os.path.isdir(resources_path):
+        resources_path = (tempdir / provider_type/ "docs" / "resources").absolute()
+        index_path = (tempdir / provider_type / "docs" / "index.md").absolute()
+        provider_reference_path = (tempdir / provider_type / "docs" / "provider_reference.html.markdown").absolute()
 
     if os.path.isdir(resources_path) and provider_type in PROVIDERS_MAP:
         
@@ -772,12 +777,12 @@ def generate_docs(tempdir, provider_type, tfschema):
                 with open(os.path.join(resources_path, filename), 'r') as f:
                     #print(filename)
                     resource_file_contents = f.read()
-                    resource_properties = process_resource_docs(provider_type, resource_file_contents, provider_readme_items)
+                    resource_properties = process_resource_docs(provider_type, resource_file_contents, provider_readme_items, provider_data)
                     if resource_properties:
                         ret[resource_properties['resource_type']] = resource_properties
             
             # provider index
-            for k,v in tfschema['provider_schemas']["registry.terraform.io/hashicorp/{}".format(provider_type)]['resource_schemas'].items():
+            for k,v in tfschema['provider_schemas']["registry.terraform.io/{}".format(provider_data["data"][0]["attributes"]["full-name"])]['resource_schemas'].items():
                 split_provider_name = k.split("_")
                 split_provider_name.pop(0)
 

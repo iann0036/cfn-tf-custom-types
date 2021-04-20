@@ -1,6 +1,7 @@
 import requests
 import pprint
 import json
+import collections
 
 
 PROVIDERS_MAP = {
@@ -88,6 +89,7 @@ PROVIDERS_MAP = {
     'skytap': ['Skytap','Skytap'],
     'hedvig': ['Hedvig','Hedvig'],
     'ucloud': ['UCloud','UCloud'],
+    'akamai': ['Akamai','Akamai'],
     'azuread': ['AzureAD','Azure Active Directory'],
     'ad': ['AD','Active Directory'],
     'archive': ['Archive','Archive'],
@@ -184,6 +186,7 @@ PROVIDERS_MAP = {
     'wavefront': ['Wavefront','Wavefront'],
     'zerotier': ['ZeroTier','ZeroTier']
 }
+PROVIDERS_MAP = collections.OrderedDict(sorted(PROVIDERS_MAP.items(), key=lambda item: item[1][1].lower()))
 
 page = {
     "links": {
@@ -196,3 +199,7 @@ while page["links"]["next"]:
     for provider in page["data"]:
         if not provider["attributes"]["name"] in PROVIDERS_MAP:
             print("    '{providername}': ['{providernameucfirst}','{providernameucfirst}'],".format(providername=provider["attributes"]["name"], providernameucfirst=provider["attributes"]["name"][0].upper() + provider["attributes"]["name"][1:]))
+
+print("---")
+for provider in PROVIDERS_MAP.keys():
+    print("* [{providername}](https://github.com/iann0036/cfn-tf-custom-types/blob/docs/docs/{provider}.md)".format(provider=provider, providername=PROVIDERS_MAP[provider][1]))
