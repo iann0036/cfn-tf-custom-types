@@ -28,9 +28,10 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Generate providers
+      continue-on-error: true
       run: |
         python util/providerscript.py > util/providers.sh
-        python generate.py all
+        sh util/providers.sh
     - name: Commit files
       run: |
         rm util/providers.sh
