@@ -30,7 +30,7 @@ jobs:
     - name: Generate providers
       run: |
         python util/providerscript.py > util/providers.sh
-        sh util/providers.sh || true
+        python generate.py all
     - name: Commit files
       run: |
         rm util/providers.sh
