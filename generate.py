@@ -332,7 +332,10 @@ def process_provider(provider_type):
 
             if not providerdir.exists():
                 providerdir.mkdir(parents=True, exist_ok=True)
-                exec_call(['cfn', 'init', '--type-name', cfntypename, '--artifact-type', 'RESOURCE', 'python37', '--use-docker'], providerdir.absolute())
+                args = ['cfn', 'init', '--type-name', cfntypename, '--artifact-type', 'RESOURCE', 'python37']
+                if os.environ['CI'] != "true":
+                    args.append('--use-docker')
+                exec_call(args, providerdir.absolute())
 
             schema = {
                 "typeName": cfntypename,
