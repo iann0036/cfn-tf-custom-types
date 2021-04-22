@@ -187,5 +187,6 @@ PROVIDERS_MAP = {
 }
 PROVIDERS_MAP = collections.OrderedDict(sorted(PROVIDERS_MAP.items(), key=lambda item: item[1][1].lower()))
 
+print("set -e")
 for provider in PROVIDERS_MAP.keys():
-    print("python3 generate.py {}".format(provider))
+    print("python3 generate.py {} || true".format(provider))

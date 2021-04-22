@@ -31,7 +31,7 @@ jobs:
       continue-on-error: true
       run: |
         python util/providerscript.py > util/providers.sh
-        sh util/providers.sh
+        bash util/providers.sh
     - name: Commit files
       run: |
         rm util/providers.sh
