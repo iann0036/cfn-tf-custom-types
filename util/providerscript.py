@@ -189,4 +189,5 @@ PROVIDERS_MAP = collections.OrderedDict(sorted(PROVIDERS_MAP.items(), key=lambda
 
 print("set -e")
 for provider in PROVIDERS_MAP.keys():
-    print("python3 generate.py {} || true".format(provider))
+    if provider != "aws" and provider != "google-beta":
+        print("python3 generate.py {} || true".format(provider))
