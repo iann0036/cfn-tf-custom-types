@@ -10,7 +10,7 @@ jobs:
   build:
     #runs-on: ubuntu-latest 
     runs-on: self-hosted
-    timeout-minutes: 720
+    timeout-minutes: 4320
 
     steps:
     - uses: actions/checkout@v2
@@ -30,7 +30,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Generate providers
       continue-on-error: true
-      timeout-minutes: 720
+      timeout-minutes: 4320
       run: |
         python util/providerscript.py > util/providers.sh
         bash util/providers.sh
