@@ -160,3 +160,10 @@ Resources:
                   - cfn-tf-custom-types/app.zip
             Runtime: python3.8
             Timeout: 900
+    
+    ExecutorLambdaInvokeConfig:
+        Type: AWS::Lambda::EventInvokeConfig
+        Properties:
+            FunctionName: !Ref ExecutorLambdaFunction
+            MaximumRetryAttempts: 1
+            Qualifier: "$LATEST"

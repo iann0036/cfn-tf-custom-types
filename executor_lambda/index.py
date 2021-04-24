@@ -3,20 +3,33 @@ import subprocess
 import boto3
 import re
 import json
+import time
 from uuid import uuid4
 
 
 def exec_call(args, cwd):
-    proc = subprocess.Popen(args,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        cwd=cwd)
-    stdout, stderr = proc.communicate()
+    stdout = None
+    stderr = None
+    proc = None
+    
+    try:
+        proc = subprocess.run(args,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            cwd=cwd,
+            timeout=600,
+            check=True)
+        stdout = proc.stdout
+        stderr = proc.stderr
+    except subprocess.TimeoutExpired as e:
+        print(e.output)
+        print(e)
+
     if stdout:
         print(stdout.decode('utf-8'))
     if stderr:
         print(stderr.decode('utf-8'))
-    if proc.returncode != 0:
+    if not proc or proc.returncode != 0:
         if stderr:
             err = stderr.decode('utf-8').split('\n')
             err = [ line for line in err if "on main.tf.json line" not in line ]
@@ -61,16 +74,25 @@ def parse_obj(obj):
     return obj
 
 
-def generate_tf(model, logicalId, providerTypeName, terraformTypeName):
+def generate_tf(model, logicalId, providerTypeName, providerFullName, terraformTypeName):
     secretsmanagerclient = boto3.client("secretsmanager")
 
     tf = {
+        "terraform": {
+            "required_providers": {}
+        },
         "provider": {},
         "resource": {}
+    }
+    tf['terraform']['required_providers'][providerTypeName] = {
+        'source': providerFullName
     }
     tf['provider'][providerTypeName] = {}
     tf['resource'][terraformTypeName] = {}
     tf['resource'][terraformTypeName][logicalId] = {}
+
+    if providerTypeName == "aws":
+        tf['provider'][providerTypeName]["region"] = os.environ['AWS_REGION']
 
     try:
         secretstr = secretsmanagerclient.get_secret_value(SecretId="terraform/{}".format(providerTypeName))['SecretString']
@@ -106,16 +128,18 @@ def handler(event, context):
             with open('/tmp/terraform.tfstate', 'wb') as f:
                 s3client.download_fileobj(statebucketname, 'state/{}.tfstate'.format(trackingid), f)
 
-        tf = generate_tf(event['model'], event['logicalId'], event['providerTypeName'], event['terraformTypeName'])
+        tf = generate_tf(event['model'], event['logicalId'], event['providerTypeName'], event['providerFullName'], event['terraformTypeName'])
+
+        print(tf)
 
         print("Initializing provider")
-        exec_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'init', '-no-color'], "/tmp/")
+        exec_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'init', '-input=false', '-no-color'], "/tmp/")
         if event['action'] == "DELETE":
             print("Executing delete")
-            exec_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'destroy', '-auto-approve', '-no-color'], "/tmp/")
+            exec_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'destroy', '-input=false', '-auto-approve', '-no-color'], "/tmp/")
         else:
             print("Executing create/update")
-            exec_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'apply', '-auto-approve', '-no-color'], "/tmp/")
+            print(exec_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'apply', '-input=false', '-auto-approve', '-no-color'], "/tmp/"))
 
         if event['action'] == "DELETE":
             print("Deleting state S3 objects")
@@ -155,6 +179,7 @@ def handler(event, context):
             s3client.put_object(Body=json.dumps(event['model']).encode(), Bucket=statebucketname, Key="state/{}.model.json".format(trackingid))
 
     except Exception as e:
+        print(str(e))
         status = {
             'status': 'failed',
             'error': str(e)

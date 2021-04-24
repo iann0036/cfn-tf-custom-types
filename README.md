@@ -31,6 +31,8 @@ If you prefer, you can also manually upsert the [template.yml](https://github.co
 
 ### Resource Generation
 
+This project supports generation for all official and verified Terraform providers.
+
 To generate the custom type source files, run:
 
 ```
