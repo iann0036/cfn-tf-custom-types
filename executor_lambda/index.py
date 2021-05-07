@@ -17,7 +17,7 @@ def exec_call(args, cwd):
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             cwd=cwd,
-            timeout=600,
+            timeout=720,
             check=True)
         stdout = proc.stdout
         stderr = proc.stderr
