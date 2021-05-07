@@ -89,9 +89,7 @@ def create_handler(
 
         resolved_model = None
         if model: # potentially no properties set
-            resolved_model = {}
-            for prop, value in vars(model).items():
-                resolved_model[prop] = value
+            resolved_model = model._serialize()
         
         lambdaclient.invoke(
             FunctionName="cfntf-executor",
