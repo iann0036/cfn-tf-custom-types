@@ -1,8 +1,8 @@
 # CloudFormation Custom Types for Terraform
 
-[![Resource Count](https://img.shields.io/badge/resource%20count-3098-blue.svg)](docs/README.md)
+[![Resource Count](https://img.shields.io/badge/resource%20count-6131-blue.svg)](docs/README.md)
 
-> Deploy over 3,000 new resource types with CloudFormation custom types.
+> Deploy over 6,000 new resource types with CloudFormation custom types.
 
 <img src="https://github.com/iann0036/cfn-tf-custom-types/raw/master/assets/screen1.png" width="536" height="417">
 
@@ -43,7 +43,7 @@ python3 generate.py aws
 
 Note that generating all files may take several minutes depending upon the amount of resources the provider has.
 
-You can also use `all` as the provider name to generate resources for all providers. Note this can take 20 minutes or more to complete.
+You can also use `all` as the provider name to generate resources for all providers. Note this can take some hours to complete.
 
 ### Resource Submission
 
