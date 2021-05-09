@@ -216,4 +216,4 @@ for provider in PROVIDERS_MAP.keys():
     print("python3 generate.py {} || true".format(provider))
 
     for region in SUPPORTED_REGIONS:
-        print("find resources/{} -name \"terraform-*.zip\" -exec aws s3 cp {{}} s3://tfcfn-{}/ --acl public-read \\;".format(provider, region)) 
+        print("find resources/{} -name \"terraform-*.zip\" -exec aws s3 cp {{}} s3://tfcfn-{}/ --acl public-read --region {} \\;".format(provider, region, region)) 
