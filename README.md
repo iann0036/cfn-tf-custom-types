@@ -9,17 +9,11 @@
 :exclamation: **CAUTION:** This project is currently in beta stages. Some resources may not work as expected. Please [report these](https://github.com/iann0036/cfn-tf-custom-types/issues) if you find them.
 
 
-## Requirements
-
-The below requirements must be installed and be available in PATH:
-
-* Python 3
-* Git
-* Docker
-* Terraform 0.15+
-* CloudFormation CLI with Python Provider
+This project registers the CloudFormation equivalent of any official or verified Terraform provider resources and allows you to manage the lifecycle of these types using CloudFormation.
 
 ## Installation
+
+To use the types, you must first deploy the Execution Infrastructure (which is responsible for running Terraform within your account) then perform the resource registration step for each type you intend to use.
 
 ### Execution Infrastructure
 
@@ -29,9 +23,38 @@ Click the above link to deploy the stack to your environment. This stack creates
 
 If you prefer, you can also manually upsert the [template.yml](https://github.com/iann0036/cfn-tf-custom-types/blob/master/template.yml) stack from source.
 
-### Resource Generation
+### Resource Registration
 
-This project supports generation for all official and verified Terraform providers.
+To register a resource within the CloudFormation Registry, you must ensure you have the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) installed then execute a command in the following format:
+
+aws cloudformation register-type --type-name Terraform::<i>ProviderName</i>::<i>ResourceType</i> --schema-handler-package s3://cfntf/terraform-<i>providernameinlowercase</i>-<i>resourcetypeinlowercase</i>.zip --type RESOURCE --region <i>aws-region</i>
+
+For example, for `Terraform::OnePassword::Item`:
+
+```
+aws cloudformation register-type --type-name Terraform::OnePassword::Item --schema-handler-package s3://cfntf/terraform-onepassword-item.zip --type RESOURCE --region us-east-1
+```
+
+If you have previously submitted the type and wish to update, you must additionally use the [set-type-default-version](https://docs.aws.amazon.com/cli/latest/reference/cloudformation/set-type-default-version.html) command after registering your update.
+
+Alternatively, you can generate the resources locally by following the steps in the expandable section below:
+
+<details>
+  <summary>Resource Generation Steps</summary>
+
+## Resource Generation
+
+### Requirements
+
+The below requirements must be installed and be available in PATH:
+
+* Python 3
+* Git
+* Docker
+* Terraform 0.15+
+* CloudFormation CLI with Python Provider
+
+### Generation
 
 To generate the custom type source files, run:
 
@@ -45,7 +68,7 @@ Note that generating all files may take several minutes depending upon the amoun
 
 You can also use `all` as the provider name to generate resources for all providers. Note this can take some hours to complete.
 
-### Resource Submission
+### Submission
 
 Once you have generated the required resource files, you can submit the type to the CloudFormation registry by running the following:
 
@@ -56,6 +79,8 @@ python3 submit.py Terraform::AWS::Instance
 ```
 
 Note that resource submission will also generally take several minutes.
+
+</details>
 
 ## Resource Usage
 
