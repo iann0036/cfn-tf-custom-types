@@ -187,6 +187,33 @@ PROVIDERS_MAP = {
 }
 PROVIDERS_MAP = collections.OrderedDict(sorted(PROVIDERS_MAP.items(), key=lambda item: item[1][1].lower()))
 
+SUPPORTED_REGIONS = [
+    'af-south-1',
+    'ap-east-1',
+    'ap-northeast-1',
+    'ap-northeast-2',
+    'ap-northeast-3',
+    'ap-south-1',
+    'ap-southeast-1',
+    'ap-southeast-2',
+    'ca-central-1',
+    'eu-central-1',
+    'eu-north-1',
+    'eu-south-1',
+    'eu-west-1',
+    'eu-west-2',
+    'eu-west-3',
+    'me-south-1',
+    'sa-east-1',
+    'us-east-1',
+    'us-east-2',
+    'us-west-1',
+    'us-west-2'
+]
+
 print("set -e")
 for provider in PROVIDERS_MAP.keys():
     print("python3 generate.py {} || true".format(provider))
+
+    for region in SUPPORTED_REGIONS:
+        print("find resources/{} -name \"terraform-*.zip\" -exec aws s3 cp {{}} s3://tfcfn-{}/ --acl public-read \\;".format(provider, region)) 
