@@ -314,7 +314,8 @@ def process_provider(provider_type):
 
     provider_data = requests.get("https://registry.terraform.io/v2/providers?filter%5Bname%5D={}&filter%5Bmoved%5D=true&filter%5Btier%5D=official%2Cpartner".format(provider_type)).json()
     if len(provider_data["data"]) != 1:
-        raise Exception("Provider data not found for {}".format(provider_type))
+        print("Provider data not found for {}".format(provider_type))
+        return
 
     with open(tempdir / "base.tf", "w") as f:
         f.write('''
