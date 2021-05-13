@@ -221,67 +221,91 @@ def exec_call(args, cwd):
     return stdout
 
 
-def jsonschema_type(attrtype):
+def jsonschema_type(attrtype, definitions, parentname):
     if attrtype == "string":
         return {
             'type': 'string'
-        }
+        }, definitions
     elif attrtype == "number":
         return {
             'type': 'number'
-        }
+        }, definitions
     elif attrtype == "bool":
         return {
             'type': 'boolean'
-        }
+        }, definitions
     elif len(attrtype) == 2 and attrtype[0] == "list":
+        items, definitions = jsonschema_type(attrtype[1], definitions, parentname)
         return {
             'type': 'array',
             'insertionOrder': False,
-            'items': jsonschema_type(attrtype[1])
-        }
+            'items': items
+        }, definitions
     elif len(attrtype) == 2 and attrtype[0] == "set":
+        items, definitions = jsonschema_type(attrtype[1], definitions, parentname)
         return {
             'type': 'array',
             'insertionOrder': True,
-            'items': jsonschema_type(attrtype[1])
-        }
+            'items': items
+        }, definitions
     elif len(attrtype) == 2 and attrtype[0] == "object":
         properties = {}
         for k,v in attrtype[1].items():
             cfnattrname = tf_to_cfn_str(k)
-            properties[cfnattrname] = jsonschema_type(v)
+            properties[cfnattrname], definitions = jsonschema_type(v, definitions, parentname)
 
-        return {
+        defcount = 1
+        defname = "{}Definition".format(parentname)
+        while defname in definitions:
+            defcount += 1
+            defname = "{}Definition{}".format(parentname, defcount)
+
+        definitions[defname] = {
             'type': 'object',
             'additionalProperties': False,
             'properties': properties
         }
+
+        return {
+            '$ref': '#/definitions/{}'.format(defname)
+        }, definitions
     elif len(attrtype) == 2 and attrtype[0] == "map":
+        mapvalue, definitions = jsonschema_type(attrtype[1], definitions, parentname)
+
+        defcount = 1
+        defname = "{}Definition".format(parentname)
+        while defname in definitions:
+            defcount += 1
+            defname = "{}Definition{}".format(parentname, defcount)
+
+        definitions[defname] = {
+            'type': 'object',
+            'additionalProperties': False,
+            'properties': {
+                'MapKey': {
+                    'type': 'string'
+                },
+                'MapValue': mapvalue
+            },
+            'required': [
+                'MapKey',
+                'MapValue'
+            ]
+        }
+
         return {
             'type': 'array',
             'insertionOrder': True,
             'items': {
-                'type': 'object',
-                'additionalProperties': False,
-                'properties': {
-                    'MapKey': {
-                        'type': 'string'
-                    },
-                    'MapValue': jsonschema_type(attrtype[1])
-                },
-                'required': [
-                    'MapKey',
-                    'MapValue'
-                ]
+                '$ref': '#/definitions/{}'.format(defname)
             }
-        }
+        }, definitions
     else:
         print("ERROR: Unknown attribute type")
         print(attrtype)
         return {
             'type': 'string'
-        }
+        }, definitions
 
 
 def process_provider(provider_type):
@@ -427,7 +451,7 @@ def process_provider(provider_type):
                                     schema['writeOnlyProperties'] = []
                                 schema['writeOnlyProperties'].append("/properties/" + cfnattrname)
 
-                    schema['properties'][cfnattrname] = jsonschema_type(attrtype)
+                    schema['properties'][cfnattrname], schema['definitions'] = jsonschema_type(attrtype, schema['definitions'], cfnattrname)
 
                     if k in doc_resources:
                         for docarg in doc_resources[k]['arguments']:
@@ -442,7 +466,7 @@ def process_provider(provider_type):
                 block = outstandingblocks.pop(blockname)
                 cfnblockname = tf_to_cfn_str(blockname)
 
-                schema['definitions'][cfnblockname] = {
+                schema['definitions']['{}Definition'.format(cfnblockname)] = {
                     'type': 'object',
                     'additionalProperties': False,
                     'properties': {},
@@ -458,13 +482,13 @@ def process_provider(provider_type):
                         optional = None
                         if 'optional' in attr:
                             if not attr['optional']:
-                                schema['definitions'][cfnblockname]['required'].append(cfnattrname)
+                                schema['definitions']['{}Definition'.format(cfnblockname)]['required'].append(cfnattrname)
                                 optional = False
                             else:
                                 optional = True
                         elif 'required' in attr:
                             if attr['required']:
-                                schema['definitions'][cfnblockname]['required'].append(cfnattrname)
+                                schema['definitions']['{}Definition'.format(cfnblockname)]['required'].append(cfnattrname)
                         if 'computed' in attr:
                             if attr['computed']:
                                 computed = True
@@ -474,54 +498,54 @@ def process_provider(provider_type):
                             if attr['sensitive']:
                                 if 'writeOnlyProperties' not in schema:
                                     schema['writeOnlyProperties'] = []
-                                schema['writeOnlyProperties'].append("/definitions/" + cfnblockname + "/" + cfnattrname)
+                                schema['writeOnlyProperties'].append("/definitions/" + cfnblockname + "Definition/" + cfnattrname)
 
-                        schema['definitions'][cfnblockname]['properties'][cfnattrname] = jsonschema_type(attrtype)
+                        schema['definitions']['{}Definition'.format(cfnblockname)]['properties'][cfnattrname], schema['definitions'] = jsonschema_type(attrtype, schema['definitions'], cfnattrname)
 
                         if k in doc_resources:
                             for docarg in doc_resources[k]['arguments']:
                                 if docarg['name'] == attrname and docarg['property_of'] == blockname and docarg['description']:
-                                    schema['definitions'][cfnblockname]['properties'][cfnattrname]['description'] = docarg['description']
+                                    schema['definitions']['{}Definition'.format(cfnblockname)]['properties'][cfnattrname]['description'] = docarg['description']
                 
                 if 'block_types' in block['block']:
                     outstandingblocks.update(block['block']['block_types'])
                     for subblockname,subblock in block['block']['block_types'].items():
                         cfnsubblockname = tf_to_cfn_str(subblockname)
                         if subblock['nesting_mode'] == "list":
-                            schema['definitions'][cfnblockname]['properties'][cfnsubblockname] = {
+                            schema['definitions']['{}Definition'.format(cfnblockname)]['properties'][cfnsubblockname] = {
                                 'type': 'array',
                                 'insertionOrder': True,
                                 'items': {
-                                    '$ref': '#/definitions/' + cfnsubblockname
+                                    '$ref': '#/definitions/' + cfnsubblockname + 'Definition'
                                 }
                             }
                         elif subblock['nesting_mode'] == "set":
-                            schema['definitions'][cfnblockname]['properties'][cfnsubblockname] = {
+                            schema['definitions']['{}Definition'.format(cfnblockname)]['properties'][cfnsubblockname] = {
                                 'type': 'array',
                                 'insertionOrder': False,
                                 'items': {
-                                    '$ref': '#/definitions/' + cfnsubblockname
+                                    '$ref': '#/definitions/' + cfnsubblockname + 'Definition'
                                 }
                             }
                         elif subblock['nesting_mode'] == "single":
-                            schema['definitions'][cfnblockname]['properties'][cfnsubblockname] = {
-                                '$ref': '#/definitions/' + cfnsubblockname
+                            schema['definitions']['{}Definition'.format(cfnblockname)]['properties'][cfnsubblockname] = {
+                                '$ref': '#/definitions/' + cfnsubblockname + 'Definition'
                             }
                         else:
                             print("Unknown subblock nesting_mode: " + subblock['nesting_mode'])
 
                         if 'max_items' in subblock:
-                            schema['definitions'][cfnblockname]['properties'][cfnsubblockname]['maxItems'] = subblock['max_items']
+                            schema['definitions']['{}Definition'.format(cfnblockname)]['properties'][cfnsubblockname]['maxItems'] = subblock['max_items']
                         if 'min_items' in subblock:
-                            schema['definitions'][cfnblockname]['properties'][cfnsubblockname]['minItems'] = subblock['min_items']
+                            schema['definitions']['{}Definition'.format(cfnblockname)]['properties'][cfnsubblockname]['minItems'] = subblock['min_items']
 
-                if not bool(schema['definitions'][cfnblockname]['properties']):
+                if not bool(schema['definitions']['{}Definition'.format(cfnblockname)]['properties']):
                     if bool(block['block']):
-                        del schema['definitions'][cfnblockname] # no properties found
+                        del schema['definitions']['{}Definition'.format(cfnblockname)] # no properties found
                         print("Skipped propertyless block: " + cfnblockname)
                         continue
                     else:
-                        schema['definitions'][cfnblockname]['properties']['IsPropertyDefined'] = {
+                        schema['definitions']['{}Definition'.format(cfnblockname)]['properties']['IsPropertyDefined'] = {
                             'type': 'boolean'
                         }
                         print("Retained propertyless block: " + cfnblockname)
@@ -531,7 +555,7 @@ def process_provider(provider_type):
                         'type': 'array',
                         'insertionOrder': False,
                         'items': {
-                            '$ref': '#/definitions/' + cfnblockname
+                            '$ref': '#/definitions/' + cfnblockname + 'Definition'
                         }
                     }
                 elif block['nesting_mode'] == "set":
@@ -539,12 +563,12 @@ def process_provider(provider_type):
                         'type': 'array',
                         'insertionOrder': True,
                         'items': {
-                            '$ref': '#/definitions/' + cfnblockname
+                            '$ref': '#/definitions/' + cfnblockname + 'Definition'
                         }
                     }
                 elif block['nesting_mode'] == "single":
                     schema['properties'][cfnblockname] = {
-                        '$ref': '#/definitions/' + cfnblockname
+                        '$ref': '#/definitions/' + cfnblockname + 'Definition'
                     }
                 else:
                     print("Unknown nesting_mode: " + block['nesting_mode'])
@@ -567,7 +591,7 @@ def process_provider(provider_type):
                     template = handlerstemplate.read().replace("###CFNTYPENAME###",cfntypename).replace("###TFTYPENAME###",k).replace("###PROVIDERFULLNAME###",provider_data["data"][0]["attributes"]["full-name"]).replace("###PROVIDERTYPENAME###",provider_type).replace("###GETATT###",json.dumps(getatt))
                     f.write(template)
 
-            exec_call(['cfn', 'submit', '--dry-run'], providerdir.absolute())
+            # exec_call(['cfn', 'submit', '--dry-run'], providerdir.absolute())
 
             print("Generated " + cfntypename)
         except KeyboardInterrupt:
