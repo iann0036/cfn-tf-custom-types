@@ -142,20 +142,14 @@ def handler(event, context):
 
         if event['action'] == "DELETE":
             print("Deleting state S3 objects")
-            try:
-                s3client.delete_object(
-                    Bucket=statebucketname,
-                    Key="state/{}.tfstate".format(trackingid)
-                )
-            except:
-                pass
-            try:
-                s3client.delete_object(
-                    Bucket=statebucketname,
-                    Key="state/{}.model.json".format(trackingid)
-                )
-            except:
-                pass
+            s3client.delete_object(
+                Bucket=statebucketname,
+                Key="state/{}.tfstate".format(trackingid)
+            )
+            s3client.delete_object(
+                Bucket=statebucketname,
+                Key="state/{}.model.json".format(trackingid)
+            )
         else:
             print("Storing Terraform state")
             with open("/tmp/terraform.tfstate", "rb") as f:
@@ -184,13 +178,19 @@ def handler(event, context):
             s3client.put_object(Body=json.dumps(event['model']).encode(), Bucket=statebucketname, Key="state/{}.model.json".format(trackingid))
 
     except Exception as e:
-        print(str(e))
-        status = {
-            'status': 'failed',
-            'error': str(e)
-        }
+        if event['action'] == "DELETE":
+            status = {
+                'status': 'completed'
+            }
+        else:
+            print(str(e))
+            status = {
+                'status': 'failed',
+                'error': str(e)
+            }
 
     s3client.put_object(Body=json.dumps(status).encode(), Bucket=statebucketname, Key="status/{}.json".format(operationid))
-
+    
     os.remove("/tmp/main.tf.json")
     os.remove("/tmp/terraform.tfstate")
+
