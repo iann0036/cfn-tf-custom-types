@@ -190,4 +190,4 @@ PROVIDERS_MAP = collections.OrderedDict(sorted(PROVIDERS_MAP.items(), key=lambda
 print("set -e")
 for provider in PROVIDERS_MAP.keys():
     print("python3 generate.py {} || true".format(provider))
-    print("find resources/{} -name \"terraform-*.zip\" -exec aws s3 cp {{}} s3://cfntf/ --acl public-read --region us-east-1 \\;".format(provider)) 
+    # print("find resources/{} -name \"terraform-*.zip\" -exec aws s3 cp {{}} s3://cfntf/ --acl public-read --region us-east-1 \\;".format(provider)) 
