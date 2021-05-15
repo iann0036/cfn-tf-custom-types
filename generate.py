@@ -592,7 +592,7 @@ def process_provider(provider_type):
                     template = handlerstemplate.read().replace("###CFNTYPENAME###",cfntypename).replace("###TFTYPENAME###",k).replace("###PROVIDERFULLNAME###",provider_data["data"][0]["attributes"]["full-name"]).replace("###PROVIDERTYPENAME###",provider_type).replace("###GETATT###",json.dumps(getatt))
                     f.write(template)
 
-            exec_call(['cfn', 'submit', '--dry-run'], providerdir.absolute())
+            # exec_call(['cfn', 'submit', '--dry-run'], providerdir.absolute())
 
             print("Generated " + cfntypename)
         except KeyboardInterrupt:
