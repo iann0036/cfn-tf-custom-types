@@ -18,12 +18,11 @@ def exec_call(args, cwd):
             stderr=subprocess.PIPE,
             cwd=cwd,
             timeout=720,
-            check=True)
+            check=False)
         stdout = proc.stdout
         stderr = proc.stderr
-    except subprocess.TimeoutExpired as e:
-        print(e.output)
-        print(e)
+    except Exception as e:
+        print(str(e))
 
     if stdout:
         print(stdout.decode('utf-8'))
@@ -139,18 +138,24 @@ def handler(event, context):
             exec_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'destroy', '-input=false', '-auto-approve', '-no-color'], "/tmp/")
         else:
             print("Executing create/update")
-            print(exec_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'apply', '-input=false', '-auto-approve', '-no-color'], "/tmp/"))
+            exec_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'apply', '-input=false', '-auto-approve', '-no-color'], "/tmp/")
 
         if event['action'] == "DELETE":
             print("Deleting state S3 objects")
-            s3client.delete_object(
-                Bucket=statebucketname,
-                Key="state/{}.tfstate".format(trackingid)
-            )
-            s3client.delete_object(
-                Bucket=statebucketname,
-                Key="state/{}.model.json".format(trackingid)
-            )
+            try:
+                s3client.delete_object(
+                    Bucket=statebucketname,
+                    Key="state/{}.tfstate".format(trackingid)
+                )
+            except:
+                pass
+            try:
+                s3client.delete_object(
+                    Bucket=statebucketname,
+                    Key="state/{}.model.json".format(trackingid)
+                )
+            except:
+                pass
         else:
             print("Storing Terraform state")
             with open("/tmp/terraform.tfstate", "rb") as f:
