@@ -42,7 +42,10 @@ def check_progress(operationid, trackingid, progress, session):
 
             # retrieve model
             try:
-                model_state = json.loads(s3client.get_object(Bucket=statebucketname, Key="state/{}.model.json".format(trackingid))['Body'].read())
+                state_str = s3client.get_object(Bucket=statebucketname, Key="state/###TFTYPENAME###/{}.model.json".format(trackingid))['Body'].read()
+                if state_str == "":
+                    state_str = "{}"
+                model_state = json.loads(state_str)
                 
                 for k,v in model_state.items():
                     setattr(progress.resourceModel, k, v)
@@ -54,6 +57,11 @@ def check_progress(operationid, trackingid, progress, session):
             progress.status = OperationStatus.FAILED
             if 'error' in result:
                 progress.message = result['error']
+                progress.errorCode = HandlerErrorCode.GeneralServiceException
+    except s3client.exceptions.NoSuchKey as e:
+        progress.status = OperationStatus.FAILED
+        progress.message = str(e)
+        progress.errorCode = HandlerErrorCode.NotFound
     except:
         progress.callbackDelaySeconds = 20
         progress.callbackContext = {
@@ -116,9 +124,11 @@ def create_handler(
     except lambdaclient.exceptions.ResourceNotFoundException as e:
         progress.message = "The execution infrastructure is not available. Read more at https://github.com/iann0036/cfn-tf-custom-types."
         progress.status = OperationStatus.FAILED
+        progress.errorCode = HandlerErrorCode.GeneralServiceException
     except Exception as e:
-        progress.message = str(e)
         progress.status = OperationStatus.FAILED
+        progress.message = str(e)
+        progress.errorCode = HandlerErrorCode.InternalFailure
     return progress
 
 
@@ -134,12 +144,23 @@ def update_handler(
         resourceModel=model,
     )
 
+    s3client = session.client('s3')
+    stsclient = session.client('sts')
+    
+    callerid = stsclient.get_caller_identity()
+    statebucketname = "cfntf-{}-{}".format(os.environ['AWS_REGION'], callerid.get('Account'))
+
     if callback_context.get('operationid'):
         return check_progress(callback_context.get('operationid'), callback_context.get('trackingid'), progress, session)
 
     LOG.warn("Starting update action")
     
     try:
+        state_str = s3client.get_object(Bucket=statebucketname, Key="state/###TFTYPENAME###/{}.model.json".format(model.tfcfnid))['Body'].read()
+        if state_str == "":
+            state_str = "{}"
+        model_state = json.loads(state_str)
+    
         lambdaclient = session.client("lambda")
 
         trackingid = model.tfcfnid
@@ -171,12 +192,18 @@ def update_handler(
             'trackingid': trackingid,
             'operationid': operationid,
         }
+    except s3client.exceptions.NoSuchKey as e:
+        progress.message = str(e)
+        progress.status = OperationStatus.FAILED
+        progress.errorCode = HandlerErrorCode.NotFound
     except lambdaclient.exceptions.ResourceNotFoundException as e:
         progress.message = "The execution infrastructure is not available. Read more at https://github.com/iann0036/cfn-tf-custom-types."
         progress.status = OperationStatus.FAILED
+        progress.errorCode = HandlerErrorCode.GeneralServiceException
     except Exception as e:
         progress.message = str(e)
         progress.status = OperationStatus.FAILED
+        progress.errorCode = HandlerErrorCode.InternalFailure
     return progress
 
 
@@ -192,12 +219,25 @@ def delete_handler(
         resourceModel=model,
     )
 
+    s3client = session.client('s3')
+    stsclient = session.client('sts')
+    
+    callerid = stsclient.get_caller_identity()
+    statebucketname = "cfntf-{}-{}".format(os.environ['AWS_REGION'], callerid.get('Account'))
+
     if callback_context.get('operationid'):
-        return check_progress(callback_context.get('operationid'), callback_context.get('trackingid'), progress, session)
+        ret = check_progress(callback_context.get('operationid'), callback_context.get('trackingid'), progress, session)
+        ret.resourceModel = None
+        return ret
 
     LOG.warn("Starting delete action")
     
     try:
+        state_str = s3client.get_object(Bucket=statebucketname, Key="state/###TFTYPENAME###/{}.model.json".format(model.tfcfnid))['Body'].read()
+        if state_str == "":
+            state_str = "{}"
+        model_state = json.loads(state_str)
+
         lambdaclient = session.client("lambda")
 
         trackingid = model.tfcfnid
@@ -229,12 +269,18 @@ def delete_handler(
             'trackingid': trackingid,
             'operationid': operationid,
         }
+    except s3client.exceptions.NoSuchKey as e:
+        progress.message = str(e)
+        progress.status = OperationStatus.FAILED
+        progress.errorCode = HandlerErrorCode.NotFound
     except lambdaclient.exceptions.ResourceNotFoundException as e:
         progress.message = "The execution infrastructure is not available. Read more at https://github.com/iann0036/cfn-tf-custom-types."
         progress.status = OperationStatus.FAILED
+        progress.errorCode = HandlerErrorCode.GeneralServiceException
     except Exception as e:
         progress.message = str(e)
         progress.status = OperationStatus.FAILED
+        progress.errorCode = HandlerErrorCode.InternalFailure
     return progress
 
 
@@ -254,7 +300,10 @@ def read_handler(
     
     # retrieve model
     try:
-        model_state = json.loads(s3client.get_object(Bucket=statebucketname, Key="state/{}.model.json".format(model.tfcfnid))['Body'].read())
+        state_str = s3client.get_object(Bucket=statebucketname, Key="state/###TFTYPENAME###/{}.model.json".format(model.tfcfnid))['Body'].read()
+        if state_str == "":
+            state_str = "{}"
+        model_state = json.loads(state_str)
         
         for k,v in model_state.items():
             setattr(model, k, v)
@@ -268,6 +317,7 @@ def read_handler(
 
     return ProgressEvent(
         status=OperationStatus.FAILED,
+        errorCode=HandlerErrorCode.NotFound,
         resourceModel=model,
     )
 
@@ -278,8 +328,44 @@ def list_handler(
     request: ResourceHandlerRequest,
     callback_context: MutableMapping[str, Any],
 ) -> ProgressEvent:
-    # TODO: put code here
+    s3client = session.client('s3')
+    stsclient = session.client('sts')
+    
+    callerid = stsclient.get_caller_identity()
+    statebucketname = "cfntf-{}-{}".format(os.environ['AWS_REGION'], callerid.get('Account'))
+    
+    # retrieve models
+    try:
+        models = []
+        state_objects = s3client.list_objects_v2(
+            Bucket=statebucketname,
+            MaxKeys=1000,
+            Prefix='state/###TFTYPENAME###/'
+        )['Contents']
+
+        for state_object in state_objects:
+            if state_object['Key'].endswith(".model.json"):
+                model = ResourceModel(tfcfnid=state_object['Key'].replace(".model.json", ""), ###ALLPROPS###)
+
+                state_str = s3client.get_object(Bucket=statebucketname, Key=state_object['Key'])['Body'].read()
+                if state_str == "":
+                    state_str = "{}"
+                model_state = json.loads(state_str)
+                
+                for k,v in model_state.items():
+                    setattr(model, k, v)
+                
+                models.append(model)
+        
+        return ProgressEvent(
+            status=OperationStatus.SUCCESS,
+            resourceModels=models,
+        )
+    except Exception as e:
+        LOG.warn(str(e))
+
     return ProgressEvent(
-        status=OperationStatus.SUCCESS,
+        status=OperationStatus.FAILED,
+        errorCode=HandlerErrorCode.InternalFailure,
         resourceModels=[],
     )

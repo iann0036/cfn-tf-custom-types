@@ -313,7 +313,7 @@ def process_provider(provider_type):
     tempdir = Path(tmpdir.name)
 
     provider_data = requests.get("https://registry.terraform.io/v2/providers?filter%5Bname%5D={}&filter%5Bmoved%5D=true&filter%5Btier%5D=official%2Cpartner".format(provider_type)).json()
-    if len(provider_data["data"]) != 1:
+    if len(provider_data["data"]) == 0:
         print("Provider data not found for {}".format(provider_type))
         return
 
@@ -354,6 +354,7 @@ def process_provider(provider_type):
             providerdir = Path('.') / 'resources' / provider_type / cfndirname
 
             getatt = []
+            allprops = []
 
             if not providerdir.exists():
                 providerdir.mkdir(parents=True, exist_ok=True)
@@ -407,7 +408,10 @@ def process_provider(provider_type):
                         ]
                     },
                     "list": {
-                        "permissions": []
+                        "permissions": [
+                            "s3:GetObject",
+                            "s3:ListBucket"
+                        ]
                     }
                 }
             }
@@ -421,6 +425,8 @@ def process_provider(provider_type):
                 for attrname,attr in v['block']['attributes'].items():
                     cfnattrname = tf_to_cfn_str(attrname)
                     attrtype = attr['type']
+
+                    allprops.append(cfnattrname + "=None")
 
                     computed = False
                     optional = None
@@ -460,6 +466,39 @@ def process_provider(provider_type):
                                 schema['properties'][cfnattrname]['description'] = docarg['description']
 
             if 'block_types' in v['block']:
+                for blockname, block in v['block']['block_types'].items():
+                    cfnblockname = tf_to_cfn_str(blockname)
+
+                    allprops.append(tf_to_cfn_str(cfnblockname) + "=None")
+
+                    if block['nesting_mode'] == "list":
+                        schema['properties'][cfnblockname] = {
+                            'type': 'array',
+                            'insertionOrder': False,
+                            'items': {
+                                '$ref': '#/definitions/' + cfnblockname + 'Definition'
+                            }
+                        }
+                    elif block['nesting_mode'] == "set":
+                        schema['properties'][cfnblockname] = {
+                            'type': 'array',
+                            'insertionOrder': True,
+                            'items': {
+                                '$ref': '#/definitions/' + cfnblockname + 'Definition'
+                            }
+                        }
+                    elif block['nesting_mode'] == "single":
+                        schema['properties'][cfnblockname] = {
+                            '$ref': '#/definitions/' + cfnblockname + 'Definition'
+                        }
+                    else:
+                        print("Unknown nesting_mode: " + block['nesting_mode'])
+
+                    if 'max_items' in block:
+                        schema['properties'][cfnblockname]['maxItems'] = block['max_items']
+                    if 'min_items' in block:
+                        schema['properties'][cfnblockname]['minItems'] = block['min_items']
+                    
                 outstandingblocks.update(v['block']['block_types'])
             
             while len(outstandingblocks):
@@ -551,34 +590,6 @@ def process_provider(provider_type):
                         }
                         print("Retained propertyless block: " + cfnblockname)
 
-                if block['nesting_mode'] == "list":
-                    schema['properties'][cfnblockname] = {
-                        'type': 'array',
-                        'insertionOrder': False,
-                        'items': {
-                            '$ref': '#/definitions/' + cfnblockname + 'Definition'
-                        }
-                    }
-                elif block['nesting_mode'] == "set":
-                    schema['properties'][cfnblockname] = {
-                        'type': 'array',
-                        'insertionOrder': True,
-                        'items': {
-                            '$ref': '#/definitions/' + cfnblockname + 'Definition'
-                        }
-                    }
-                elif block['nesting_mode'] == "single":
-                    schema['properties'][cfnblockname] = {
-                        '$ref': '#/definitions/' + cfnblockname + 'Definition'
-                    }
-                else:
-                    print("Unknown nesting_mode: " + block['nesting_mode'])
-
-                if 'max_items' in block:
-                    schema['properties'][cfnblockname]['maxItems'] = block['max_items']
-                if 'min_items' in block:
-                    schema['properties'][cfnblockname]['minItems'] = block['min_items']
-
                 # TODO: Block descriptions/max/min/etc.
 
             with open(providerdir / (cfndirname.lower() + ".json"), "w") as f:
@@ -589,7 +600,7 @@ def process_provider(provider_type):
             # update handlers.py
             with open("handlers.py.template", "r") as handlerstemplate:
                 with open(providerdir / "src" / cfndirname.lower().replace("-","_") / "handlers.py", "w") as f:
-                    template = handlerstemplate.read().replace("###CFNTYPENAME###",cfntypename).replace("###TFTYPENAME###",k).replace("###PROVIDERFULLNAME###",provider_data["data"][0]["attributes"]["full-name"]).replace("###PROVIDERTYPENAME###",provider_type).replace("###GETATT###",json.dumps(getatt))
+                    template = handlerstemplate.read().replace("###CFNTYPENAME###",cfntypename).replace("###TFTYPENAME###",k).replace("###PROVIDERFULLNAME###",provider_data["data"][0]["attributes"]["full-name"]).replace("###PROVIDERTYPENAME###",provider_type).replace("###GETATT###",json.dumps(getatt)).replace("###ALLPROPS###",', '.join(allprops))
                     f.write(template)
 
             # exec_call(['cfn', 'submit', '--dry-run'], providerdir.absolute())

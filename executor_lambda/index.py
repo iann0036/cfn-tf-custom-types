@@ -11,6 +11,11 @@ def exec_call(args, cwd):
     stdout = None
     stderr = None
     proc = None
+
+    if os.environ['DEBUG_SKIP_EXECUTION'] == "true":
+        with open('/tmp/terraform.tfstate', 'wb') as f:
+            f.write(b'')
+        return {}
     
     try:
         proc = subprocess.run(args,
@@ -18,11 +23,12 @@ def exec_call(args, cwd):
             stderr=subprocess.PIPE,
             cwd=cwd,
             timeout=720,
-            check=False)
+            check=True)
         stdout = proc.stdout
         stderr = proc.stderr
-    except Exception as e:
-        print(str(e))
+    except subprocess.TimeoutExpired as e:
+        print(e.output)
+        print(e)
 
     if stdout:
         print(stdout.decode('utf-8'))
@@ -125,7 +131,7 @@ def handler(event, context):
     try:
         if event['action'] in ["UPDATE", "DELETE"]:
             with open('/tmp/terraform.tfstate', 'wb') as f:
-                s3client.download_fileobj(statebucketname, 'state/{}.tfstate'.format(trackingid), f)
+                s3client.download_fileobj(statebucketname, 'state/{}/{}.tfstate'.format(event['terraformTypeName'], trackingid), f)
 
         tf = generate_tf(event['model'], event['logicalId'], event['providerTypeName'], event['providerFullName'], event['terraformTypeName'])
 
@@ -144,16 +150,16 @@ def handler(event, context):
             print("Deleting state S3 objects")
             s3client.delete_object(
                 Bucket=statebucketname,
-                Key="state/{}.tfstate".format(trackingid)
+                Key="state/{}/{}.tfstate".format(event['terraformTypeName'], trackingid)
             )
             s3client.delete_object(
                 Bucket=statebucketname,
-                Key="state/{}.model.json".format(trackingid)
+                Key="state/{}/{}.model.json".format(event['terraformTypeName'], trackingid)
             )
         else:
             print("Storing Terraform state")
             with open("/tmp/terraform.tfstate", "rb") as f:
-                s3client.upload_fileobj(f, statebucketname, "state/{}.tfstate".format(trackingid))
+                s3client.upload_fileobj(f, statebucketname, "state/{}/{}.tfstate".format(event['terraformTypeName'], trackingid))
             
             print("Packing return values")
             try:
@@ -175,22 +181,22 @@ def handler(event, context):
                 pass
 
             print("Storing model state")
-            s3client.put_object(Body=json.dumps(event['model']).encode(), Bucket=statebucketname, Key="state/{}.model.json".format(trackingid))
+            s3client.put_object(Body=json.dumps(event['model']).encode(), Bucket=statebucketname, Key="state/{}/{}.model.json".format(event['terraformTypeName'], trackingid))
 
     except Exception as e:
-        if event['action'] == "DELETE":
-            status = {
-                'status': 'completed'
-            }
-        else:
-            print(str(e))
-            status = {
-                'status': 'failed',
-                'error': str(e)
-            }
+        print(str(e))
+        status = {
+            'status': 'failed',
+            'error': str(e)
+        }
 
     s3client.put_object(Body=json.dumps(status).encode(), Bucket=statebucketname, Key="status/{}.json".format(operationid))
-    
-    os.remove("/tmp/main.tf.json")
-    os.remove("/tmp/terraform.tfstate")
 
+    try:
+        os.remove("/tmp/main.tf.json")
+    except:
+        pass
+    try:
+        os.remove("/tmp/terraform.tfstate")
+    except:
+        pass
