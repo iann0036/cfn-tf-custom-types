@@ -202,7 +202,12 @@ def tf_type_to_cfn_type(tf_name, provider_name):
     split_provider_name = tf_name.split("_")
     split_provider_name.pop(0)
     cfn_provider_name = PROVIDERS_MAP[provider_name][0]
-    return "Terraform::" + cfn_provider_name + "::" + tf_to_cfn_str("_".join(split_provider_name))
+
+    prefix = "TF"
+    if len(sys.argv) > 2:
+        prefix = sys.argv[2]
+
+    return prefix + "::" + cfn_provider_name + "::" + tf_to_cfn_str("_".join(split_provider_name))
 
 
 def exec_call(args, cwd):
@@ -346,9 +351,13 @@ def process_provider(provider_type):
         endnaming = tf_to_cfn_str(k)
         if k.startswith(provider_type + "_"):
             endnaming = tf_to_cfn_str(k[(len(provider_type)+1):])
+
+        prefix = "TF"
+        if len(sys.argv) > 2:
+            prefix = sys.argv[2]
         
-        cfntypename = "Terraform::" + PROVIDERS_MAP[provider_type][0] + "::" + endnaming
-        cfndirname = "Terraform-" + PROVIDERS_MAP[provider_type][0] + "-" + endnaming
+        cfntypename = prefix + "::" + PROVIDERS_MAP[provider_type][0] + "::" + endnaming
+        cfndirname = prefix + "-" + PROVIDERS_MAP[provider_type][0] + "-" + endnaming
 
         try:
             providerdir = Path('.') / 'resources' / provider_type / cfndirname
@@ -466,6 +475,7 @@ def process_provider(provider_type):
                                 schema['properties'][cfnattrname]['description'] = docarg['description']
 
             if 'block_types' in v['block']:
+                override_block = {}
                 for blockname, block in v['block']['block_types'].items():
                     cfnblockname = tf_to_cfn_str(blockname)
 
@@ -498,8 +508,18 @@ def process_provider(provider_type):
                         schema['properties'][cfnblockname]['maxItems'] = block['max_items']
                     if 'min_items' in block:
                         schema['properties'][cfnblockname]['minItems'] = block['min_items']
-                    
+
+                    # TODO: Add overrides.json
+                    override_block["/" + cfnblockname] = {}
+
                 outstandingblocks.update(v['block']['block_types'])
+
+                overrides = {
+                    "CREATE": override_block,
+                    "UPDATE": override_block
+                }
+                with open(providerdir / "overrides.json", "w") as f:
+                    f.write(json.dumps(overrides))
             
             while len(outstandingblocks):
                 blockname = next(iter(outstandingblocks))
@@ -828,8 +848,12 @@ def generate_docs(tempdir, provider_type, tfschema, provider_data):
                 endnaming = tf_to_cfn_str(k)
                 if k.startswith(provider_type + "_"):
                     endnaming = tf_to_cfn_str(k[(len(provider_type)+1):])
+
+                prefix = "TF"
+                if len(sys.argv) > 2:
+                    prefix = sys.argv[2]
                 
-                cfn_type = "Terraform::" + PROVIDERS_MAP[provider_type][0] + "::" + endnaming
+                cfn_type = prefix + "::" + PROVIDERS_MAP[provider_type][0] + "::" + endnaming
                 
                 provider_readme_items.append("* [{cfn_type}](../resources/{provider_name}/{type_stub}/docs/README.md)".format(
                     cfn_type=cfn_type,
@@ -860,8 +884,12 @@ def generate_docs(tempdir, provider_type, tfschema, provider_data):
                 endnaming = tf_to_cfn_str(k)
                 if k.startswith(provider_type + "_"):
                     endnaming = tf_to_cfn_str(k[(len(provider_type)+1):])
+
+                prefix = "TF"
+                if len(sys.argv) > 2:
+                    prefix = sys.argv[2]
                 
-                cfn_type = "Terraform::" + PROVIDERS_MAP[provider_type][0] + "::" + endnaming
+                cfn_type = prefix + "::" + PROVIDERS_MAP[provider_type][0] + "::" + endnaming
                 
                 provider_readme_items.append("* [{cfn_type}](../resources/{provider_name}/{type_stub}/docs/README.md)".format(
                     cfn_type=cfn_type,

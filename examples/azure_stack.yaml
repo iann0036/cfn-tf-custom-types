@@ -5,7 +5,7 @@ Description: "Example that deploys an Azure network and virtual machine"
 Resources:
 
     myAzureResourceGroup:
-        Type: Terraform::AzureRM::ResourceGroup
+        Type: TF::AzureRM::ResourceGroup
         Properties:
             Name: demo
             Location: westus
@@ -13,7 +13,7 @@ Resources:
     myAzureVNet:
         DependsOn:
           - myAzureResourceGroup
-        Type: Terraform::AzureRM::VirtualNetwork
+        Type: TF::AzureRM::VirtualNetwork
         Properties:
             Name: myAzureVNet
             ResourceGroupName: demo
@@ -22,7 +22,7 @@ Resources:
             Location: westus
 
     myAzureSubnet:
-        Type: Terraform::AzureRM::Subnet
+        Type: TF::AzureRM::Subnet
         Properties:
             Name: myAzureSubnet
             ResourceGroupName: demo
@@ -30,7 +30,7 @@ Resources:
             AddressPrefix: '10.0.0.0/24'
 
     myAzureNetworkInterface:
-        Type: Terraform::AzureRM::NetworkInterface
+        Type: TF::AzureRM::NetworkInterface
         Properties:
             Name: myAzureNIC
             ResourceGroupName: demo
@@ -41,7 +41,7 @@ Resources:
                 PrivateIpAddressAllocation: Dynamic
 
     myAzureVm:
-        Type: Terraform::AzureRM::VirtualMachine
+        Type: TF::AzureRM::VirtualMachine
         Properties:
             Name: myVM
             ResourceGroupName: demo

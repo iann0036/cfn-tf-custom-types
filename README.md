@@ -56,7 +56,7 @@ Once you have generated the required resource files, you can submit the type to 
 ```
 python3 submit.py <resourcename>
 # For example:
-python3 submit.py Terraform::AWS::Instance
+python3 submit.py TF::AWS::Instance
 ```
 
 Note that resource submission will also generally take several minutes.
