@@ -12,7 +12,7 @@ def exec_call(args, cwd):
     stderr = None
     proc = None
 
-    if os.environ['DEBUG_SKIP_EXECUTION'] == "true":
+    if 'DEBUG_SKIP_EXECUTION' in os.environ and os.environ['DEBUG_SKIP_EXECUTION'] == "true":
         with open('/tmp/terraform.tfstate', 'wb') as f:
             f.write(b'')
         return {}
