@@ -31,7 +31,7 @@ def exec_call(args, cwd):
         print(e)
 
     if stdout:
-        print(stdout.decode('utf-8'))
+        pass # print(stdout.decode('utf-8'))
     if stderr:
         print(stderr.decode('utf-8'))
     if not proc or proc.returncode != 0:
@@ -168,13 +168,13 @@ def handler(event, context):
                 if 'values' in tfshow['values']['root_module']['resources'][0]:
                     for tfreturnname, return_value_value in tfshow['values']['root_module']['resources'][0]['values'].items():
                         return_value_name = tf_to_cfn_str(tfreturnname)
-                        if return_value_name in event['returnValues'] and event['model'][return_value_name] is None:
+                        if return_value_name in event['returnValues']:
                             if type(return_value_value) in [str, bool, int, float]: # TODO: How does GetAtt handle arrays/objects?
                                 event['model'][return_value_name] = return_value_value
                 if 'instances' in tfshow['values']['root_module']['resources'][0]:
                     for tfreturnname, return_value_value in tfshow['values']['root_module']['resources'][0]['instances'][0]['attributes'].items():
                         return_value_name = tf_to_cfn_str(tfreturnname)
-                        if return_value_name in event['returnValues'] and event['model'][return_value_name] is None:
+                        if return_value_name in event['returnValues']:
                             if type(return_value_value) in [str, bool, int, float]: # TODO: How does GetAtt handle arrays/objects?
                                 event['model'][return_value_name] = return_value_value
             except:
