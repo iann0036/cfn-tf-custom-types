@@ -313,6 +313,38 @@ def jsonschema_type(attrtype, definitions, parentname):
         }, definitions
 
 
+def generate_empty_override(schema, definition):
+    ret = {}
+
+    if '$ref' in definition:
+        return generate_empty_override(schema, schema['definitions'][definition['$ref'].replace("#/definitions/", "")])
+
+    for propname, prop in definition['properties'].items():
+        if '$ref' in prop:
+            ret[propname] = generate_empty_override(schema, schema['definitions'][prop['$ref'].replace("#/definitions/", "")])
+        elif prop['type'] == "string":
+            ret[propname] = ""
+        elif prop['type'] == "number":
+            ret[propname] = 1
+        elif prop['type'] == "boolean":
+            ret[propname] = False
+        elif prop['type'] == "object":
+            ret[propname] = generate_empty_override(schema, prop['properties'])
+        elif prop['type'] == "array":
+            if '$ref' in prop['items']:
+                ret[propname] = [generate_empty_override(schema, prop['items'])]
+            elif prop['items']['type'] == "string":
+                ret[propname] = [""]
+            elif prop['items']['type'] == "number":
+                ret[propname] = [1]
+            elif prop['items']['type'] == "boolean":
+                ret[propname] = [False]
+        else:
+            print("Unknown type: " + prop['type'])
+
+    return ret
+
+
 def process_provider(provider_type):
     tmpdir = tempfile.TemporaryDirectory()
     tempdir = Path(tmpdir.name)
@@ -475,7 +507,6 @@ def process_provider(provider_type):
                                 schema['properties'][cfnattrname]['description'] = docarg['description']
 
             if 'block_types' in v['block']:
-                override_block = {}
                 for blockname, block in v['block']['block_types'].items():
                     cfnblockname = tf_to_cfn_str(blockname)
 
@@ -509,17 +540,7 @@ def process_provider(provider_type):
                     if 'min_items' in block:
                         schema['properties'][cfnblockname]['minItems'] = block['min_items']
 
-                    # TODO: Add overrides.json
-                    override_block["/" + cfnblockname] = {}
-
                 outstandingblocks.update(v['block']['block_types'])
-
-                overrides = {
-                    "CREATE": override_block,
-                    "UPDATE": override_block
-                }
-                with open(providerdir / "overrides.json", "w") as f:
-                    f.write(json.dumps(overrides))
             
             while len(outstandingblocks):
                 blockname = next(iter(outstandingblocks))
@@ -612,6 +633,24 @@ def process_provider(provider_type):
 
                 # TODO: Block descriptions/max/min/etc.
 
+            # write overrides
+            override_block = {}
+            for propertyname, propertyblock in schema['properties'].items():
+                if '$ref' in propertyblock:
+                    pass
+                elif propertyblock['type'] == "array" and '$ref' in propertyblock['items']:
+                    definition = schema['definitions'][propertyblock['items']['$ref'].replace("#/definitions/", "")]
+                    override_block['/' + propertyname] = [
+                        generate_empty_override(schema, definition)
+                    ]
+            overrides = {
+                "CREATE": override_block,
+                "UPDATE": override_block
+            }
+            with open(providerdir / "overrides.json", "w") as f:
+                f.write(json.dumps(overrides))
+
+            # write schema
             with open(providerdir / (cfndirname.lower() + ".json"), "w") as f:
                 f.write(json.dumps(schema, indent=4))
             
